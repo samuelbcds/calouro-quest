@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useGamification } from '../../context/GamificationContext';
+import logoIcon from '../../assets/logo-icon.svg';
 
 const PAGE_TITLES: Record<string, string> = {
   '/missoes': 'Missões',
@@ -23,7 +24,7 @@ export const Header: React.FC = () => {
           <img
             alt="IC UFRJ Logo"
             className="h-8 w-auto object-contain shrink-0"
-            src="https://lh3.googleusercontent.com/aida/AEtjO1W_IuotRg3PNakEcyNDEzPOzGWJDoptbuQxDQbztDfasGIwgZiEBckhJX-ynl1hs5BAJWqjhrJtWft-pXlwgvHW7nDb0vVHV4pV-TbOJ8jdZOEsE1hyzYzFoVmP03ego6G_r-7yODx32PYW8rcPNCtTLeXhCpZY4CGrUz1lTCN1g1UEJNT5B8vxwruIN_Ugmj2ClOS5GvNHf4gn8J6K8fJkiTJVXgbs3pN9ybAxqqlS8SekOe2IbMySBPUF"
+            src={logoIcon}
           />
           <div className="flex flex-col min-w-0">
             <span className="font-label-caps text-label-caps text-secondary uppercase truncate leading-none">

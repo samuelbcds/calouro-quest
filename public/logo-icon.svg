@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="120 200 760 371" width="100%" height="100%" aria-label="Calouro Quest Icon">
+  <title>Calouro Quest Icon</title>
+  <!-- Left Triangle -->
+  <polygon fill="#004a80" points="144,291 238,385.5 144,480" />
+
+  <!-- Right Triangle -->
+  <polygon fill="#004a80" points="856,291 762,385.5 856,480" />
+
+  <!-- Left Crescent -->
+  <path fill="#004a80" d="M 455.5,220 A 165.5 165.5 0 0 0 455.5,551 A 350 350 0 0 1 455.5,220 Z" />
+
+  <!-- Right Crescent -->
+  <path fill="#004a80" d="M 544.5,220 A 165.5 165.5 0 0 1 544.5,551 A 350 350 0 0 0 544.5,220 Z" />
+
+  <!-- Center Amber Elements -->
+  <!-- Top Chevron -->
+  <polygon fill="#f59e0b" points="500,267 563,337 537,337 500,296 463,337 437,337" />
+
+  <!-- Middle Diamond -->
+  <polygon fill="#f59e0b" points="500,347 527,385.5 500,424 473,385.5" />
+
+  <!-- Bottom Chevron -->
+  <polygon fill="#f59e0b" points="500,447 547,493 526,493 500,468 474,493 453,493" />
+</svg>
