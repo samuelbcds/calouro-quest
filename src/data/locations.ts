@@ -23,6 +23,7 @@ export const CAMPUS_LOCATIONS: CampusLocation[] = [
     description: 'Espaço de convivência dos estudantes de Ciência da Computação: sofás, jogos, microondas e acolhimento.',
     howToGetThere: 'No 2º pavimento do Bloco E, bem próximo à secretaria e sala dos professores.',
     ninjaTip: 'Ponto de encontro oficial para tirar dúvidas com veteranos e retirar adesivos de terminal.',
+    ninjaTip: 'Ponto de encontro oficial para tirar dúvidas com veteranos, tomar café e descansar entre as aulas.',
     icon: 'forum',
     badge: 'Centro Acadêmico',
     lat: -22.85802,
