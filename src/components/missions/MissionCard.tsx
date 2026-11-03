@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mission } from '../../types';
+import { Mission, MissionTag } from '../../types';
 import { useGamification } from '../../context/GamificationContext';
 
 interface MissionCardProps {
@@ -11,6 +11,19 @@ const CATEGORY_LABELS: Record<string, { label: string; badgeClass: string }> = {
   ic: { label: '💻 IC', badgeClass: 'bg-secondary-fixed text-on-secondary-fixed-variant' },
   social: { label: '🤝 Social', badgeClass: 'bg-surface-container-high text-on-surface-variant' },
   extensoes: { label: '🚀 Extensões', badgeClass: 'bg-secondary-fixed text-on-secondary-fixed-variant' },
+};
+
+const getTagBadgeClass = (tag: MissionTag): string => {
+  switch (tag) {
+    case MissionTag.CRUCIAL:
+      return 'bg-error-container text-on-error-container';
+    case MissionTag.INTEGRACAO:
+    case MissionTag.EXPLORACAO:
+    case MissionTag.OPORTUNIDADE:
+      return 'bg-tertiary-fixed text-on-tertiary-fixed-variant';
+    default:
+      return 'bg-secondary-fixed text-on-secondary-fixed';
+  }
 };
 
 export const MissionCard: React.FC<MissionCardProps> = ({ mission }) => {
@@ -63,13 +76,9 @@ export const MissionCard: React.FC<MissionCardProps> = ({ mission }) => {
           </span>
           {mission.tag && (
             <span
-              className={`px-2 py-0.5 rounded-full font-label-caps text-label-caps font-bold ${
-                mission.tag === 'Crucial'
-                  ? 'bg-error-container text-on-error-container'
-                  : mission.tag === 'Desafio' || mission.tag === 'Épica'
-                  ? 'bg-tertiary-fixed text-on-tertiary-fixed-variant'
-                  : 'bg-secondary-fixed text-on-secondary-fixed'
-              }`}
+              className={`px-2 py-0.5 rounded-full font-label-caps text-label-caps font-bold ${getTagBadgeClass(
+                mission.tag
+              )}`}
             >
               {mission.tag}
             </span>

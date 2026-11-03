@@ -1,12 +1,27 @@
 export type MissionCategory = 'fundao' | 'ic' | 'social' | 'extensoes';
 
+export enum MissionTag {
+  CRUCIAL = 'Crucial',
+  MOBILIDADE = 'Mobilidade',
+  HISTORIA = 'História',
+  ACESSO = 'Acesso',
+  ACADEMICO = 'Acadêmico',
+  SOCIAL = 'Social',
+  IC = 'IC',
+  FUNDAO = 'Fundão',
+  EXPLORACAO = 'Exploração',
+  OPORTUNIDADE = 'Oportunidade',
+  EXTENSOES = 'Extensões',
+  INTEGRACAO = 'Integração',
+}
+
 export interface Mission {
   id: number;
   title: string;
   description: string;
   category: MissionCategory;
   xp: number;
-  tag?: string;
+  tag?: MissionTag;
   location?: string;
   codeSnippet?: string;
 }

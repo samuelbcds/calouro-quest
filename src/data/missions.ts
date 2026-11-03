@@ -1,4 +1,4 @@
-import { Mission } from '../types';
+import { Mission, MissionTag } from '../types';
 
 export const INITIAL_MISSIONS: Mission[] = [
   {
@@ -7,7 +7,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Primeiro contato com a tradicional super fila do bandejão do CT ou Central!',
     category: 'fundao',
     xp: 50,
-    tag: 'Crucial',
+    tag: MissionTag.CRUCIAL,
     location: 'RU Central / CT',
   },
   {
@@ -16,7 +16,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'O famoso Circular! Descubra a diferença de rotas para não parar na prefeitura universitária sem querer.',
     category: 'fundao',
     xp: 50,
-    tag: 'Mobilidade',
+    tag: MissionTag.MOBILIDADE,
     location: 'Pontos Circulares',
   },
   {
@@ -25,7 +25,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'No CCMN / NCE: relíquias dos primórdios da computação no Brasil e fitas magnéticas históricas.',
     category: 'ic',
     xp: 100,
-    tag: 'História',
+    tag: MissionTag.HISTORIA,
     location: 'NCE / CCMN',
   },
   {
@@ -34,7 +34,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Seu e-mail institucional @ic.ufrj.br: passaporte de acesso aos laboratórios e servidores do instituto.',
     category: 'ic',
     xp: 80,
-    tag: 'Acesso',
+    tag: MissionTag.ACESSO,
     codeSnippet: 'whoami: calouro@ic.ufrj.br',
   },
   {
@@ -43,7 +43,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Para a chamada não ser só uma silhueta cinza e adiantar a emissão do DRE oficial.',
     category: 'ic',
     xp: 40,
-    tag: 'Acadêmico',
+    tag: MissionTag.ACADEMICO,
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Canal geral do CC, matérias, trocas de dicas e avisos da coordenação.',
     category: 'social',
     xp: 60,
-    tag: 'Social',
+    tag: MissionTag.SOCIAL,
   },
   {
     id: 7,
@@ -59,7 +59,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Cálculo I, Álgebra Linear, IC e Laboratório de Programação. Companheirismo nas listas!',
     category: 'ic',
     xp: 50,
-    tag: 'Acadêmico',
+    tag: MissionTag.ACADEMICO,
   },
   {
     id: 8,
@@ -67,7 +67,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Garanta que seu e-mail institucional está logado para ver materiais e listas.',
     category: 'ic',
     xp: 50,
-    tag: 'Acadêmico',
+    tag: MissionTag.ACADEMICO,
   },
   {
     id: 9,
@@ -75,7 +75,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Conhecer a grade curricular oficial, fluxograma do curso e corpo docente.',
     category: 'ic',
     xp: 30,
-    tag: 'IC',
+    tag: MissionTag.IC,
   },
   {
     id: 10,
@@ -83,7 +83,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Tirar dúvidas sobre trancamento, requisitos e equivalências com os professores orientadores.',
     category: 'ic',
     xp: 70,
-    tag: 'Acadêmico',
+    tag: MissionTag.ACADEMICO,
   },
   {
     id: 11,
@@ -91,7 +91,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Conhecer o Centro Acadêmico: sofás, bate-papo, jogos e acolhimento dos veteranos.',
     category: 'social',
     xp: 80,
-    tag: 'Social',
+    tag: MissionTag.SOCIAL,
     location: 'Bloco E - Sala 2009',
   },
   {
@@ -100,7 +100,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Ambiente silencioso, ar condicionado e livros clássicos de Cálculo e Algoritmos.',
     category: 'fundao',
     xp: 70,
-    tag: 'Fundão',
+    tag: MissionTag.FUNDAO,
   },
   {
     id: 13,
@@ -108,7 +108,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'O berço dos seus códigos em C e das noites de compilação sem warnings.',
     category: 'ic',
     xp: 80,
-    tag: 'IC',
+    tag: MissionTag.IC,
     location: 'CCMN Bloco E - 2º Andar',
   },
   {
@@ -117,7 +117,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Local clássico de café, microondas e pontos de apoio institucional.',
     category: 'fundao',
     xp: 60,
-    tag: 'Explorador',
+    tag: MissionTag.EXPLORACAO,
     location: 'NCE / Decania CCMN',
   },
   {
@@ -126,7 +126,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Fica no próprio CCMN! Réplicas de dinossauros, fósseis e meteoritos fascinantes.',
     category: 'fundao',
     xp: 70,
-    tag: 'Explorador',
+    tag: MissionTag.EXPLORACAO,
     location: 'CCMN Térreo',
   },
   {
@@ -135,7 +135,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Analytica (IA/Data), GRIS (Segurança), Minervas Digitais & Museu Suvaco de Cristo.',
     category: 'extensoes',
     xp: 120,
-    tag: 'Oportunidade',
+    tag: MissionTag.OPORTUNIDADE,
   },
   {
     id: 17,
@@ -143,7 +143,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Empresa Júnior de Consultoria em Computação da UFRJ e vivência de mercado.',
     category: 'extensoes',
     xp: 80,
-    tag: 'Extensões',
+    tag: MissionTag.EXTENSOES,
   },
   {
     id: 18,
@@ -151,7 +151,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Blocos A até I, salões de engenharia, xerox e os lanches clássicos.',
     category: 'fundao',
     xp: 60,
-    tag: 'Fundão',
+    tag: MissionTag.FUNDAO,
     location: 'CT',
   },
   {
@@ -160,7 +160,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Prédio colossal da medicina, biologia e com outro bandejão disputado.',
     category: 'fundao',
     xp: 60,
-    tag: 'Fundão',
+    tag: MissionTag.FUNDAO,
     location: 'CCS',
   },
   {
@@ -169,7 +169,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Complexo subterrâneo labírintico do Centro de Ciências da Saúde. Vale a pena conhecer com colegas para se orientar bem pelos blocos.',
     category: 'fundao',
     xp: 100,
-    tag: 'Exploração',
+    tag: MissionTag.EXPLORACAO,
     location: 'CCS Subsolo',
   },
   {
@@ -178,7 +178,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Ponto de encontro social, quitutes e cerveja gelada pós-prova no CCMN.',
     category: 'social',
     xp: 60,
-    tag: 'Social',
+    tag: MissionTag.SOCIAL,
     location: 'Atrás do CCMN',
   },
   {
@@ -187,7 +187,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Arquitetura acolhedora, jardins abertos e cafés gostosos para respirar ar puro.',
     category: 'fundao',
     xp: 50,
-    tag: 'Explorador',
+    tag: MissionTag.EXPLORACAO,
     location: 'Prédio de Letras',
   },
   {
@@ -196,7 +196,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Palestras de recepção, gincana de calouros e apresentação dos laboratórios.',
     category: 'social',
     xp: 150,
-    tag: 'Integração',
+    tag: MissionTag.INTEGRACAO,
   },
   {
     id: 24,
@@ -204,7 +204,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'A tradicional celebração dos calouros com veteranos no início do semestre.',
     category: 'social',
     xp: 100,
-    tag: 'Social',
+    tag: MissionTag.SOCIAL,
   },
   {
     id: 25,
@@ -212,7 +212,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: '@cainfoufrj: eventos, memes, carteirinhas e comunicados estudantis em primeira mão.',
     category: 'social',
     xp: 40,
-    tag: 'Social',
+    tag: MissionTag.SOCIAL,
   },
   {
     id: 26,
@@ -220,7 +220,6 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Para acompanhar os flagrantes, achados & perdidos e os momentos icônicos do campus.',
     category: 'social',
     xp: 40,
-    tag: 'Social',
+    tag: MissionTag.SOCIAL,
   },
 ];
-
