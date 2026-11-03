@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
           />
           <div className="flex flex-col min-w-0">
             <span className="font-label-caps text-label-caps text-secondary uppercase truncate leading-none">
-              IC · UFRJ
+              Calouro · Quest
             </span>
             <span className="font-headline-sm text-headline-sm text-primary font-bold truncate leading-tight">
               {currentTitle}
