@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-fixed-dim": "#93ccff", "outline-variant": "#c2c7d1", "surface-variant": "#e0e3e5", "surface-dim": "#d8dadc", "surface-tint": "#286198", "on-surface-variant": "#42474f", "primary-fixed": "#d2e4ff", "secondary": "#006398", "surface-container-lowest": "#ffffff", "surface": "#f7f9fb", "surface-bright": "#f7f9fb", "inverse-primary": "#9fcaff", "on-error-container": "#93000a", "secondary-fixed": "#cce5ff", "surface-container-low": "#f2f4f6", "inverse-on-surface": "#eff1f3", "primary": "#00335b", "on-secondary-fixed": "#001d31", "on-tertiary": "#ffffff", "on-primary-fixed": "#001d37", "surface-container-highest": "#e0e3e5", "on-primary-container": "#88baf7", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#653e00", "on-primary": "#ffffff", "inverse-surface": "#2d3133", "on-background": "#191c1e", "secondary-container": "#5bb8fe", "background": "#f7f9fb", "surface-container-high": "#e6e8ea", "error-container": "#ffdad6", "on-secondary-container": "#00476e", "tertiary": "#482b00", "tertiary-container": "#673f00", "primary-fixed-dim": "#9fcaff", "tertiary-fixed": "#ffddb8", "tertiary-fixed-dim": "#ffb95f", "primary-container": "#004a80", "error": "#ba1a1a", "on-secondary-fixed-variant": "#004b73", "on-tertiary-container": "#fca416", "surface-container": "#eceef0", "on-primary-fixed-variant": "#00497e", "on-surface": "#191c1e", "outline": "#727781", "on-secondary": "#ffffff", "on-tertiary-fixed": "#2a1700" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter-mobile": "1rem", "margin": "1.875rem", "space-xs": "0.25rem", "gutter": "1.25rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "space-xl": "2rem", "space-md": "1rem", "space-lg": "1.5rem" }, fontFamily: { "headline-lg": ["Montserrat"], "headline-sm": ["Montserrat"], "headline-lg-mobile": ["Montserrat"], "code-snippet": ["JetBrains Mono"], "label-caps": ["Montserrat"], "display-lg": ["Montserrat"], "body-bold": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Montserrat"], "display-lg-mobile": ["Montserrat"], "body-base": ["Inter"] }, fontSize: { "headline-lg": ["26px", { lineHeight: "34px", letterSpacing: "-0.01em", fontWeight: "700" }], "headline-sm": ["17px", { lineHeight: "24px", fontWeight: "600" }], "headline-lg-mobile": ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "700" }], "code-snippet": ["14px", { lineHeight: "20px", fontWeight: "400" }], "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.06em", fontWeight: "700" }], "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "800" }], "body-bold": ["16px", { lineHeight: "26px", fontWeight: "600" }], "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }], "display-lg-mobile": ["26px", { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "800" }], "body-base": ["16px", { lineHeight: "26px", fontWeight: "400" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-base text-body-base text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="IC UFRJ Calouros Logo" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1W_IuotRg3PNakEcyNDEzPOzGWJDoptbuQxDQbztDfasGIwgZiEBckhJX-ynl1hs5BAJWqjhrJtWft-pXlwgvHW7nDb0vVHV4pV-TbOJ8jdZOEsE1hyzYzFoVmP03ego6G_r-7yODx32PYW8rcPNCtTLeXhCpZY4CGrUz1lTCN1g1UEJNT5B8vxwruIN_Ugmj2ClOS5GvNHf4gn8J6K8fJkiTJVXgbs3pN9ybAxqqlS8SekOe2IbMySBPUF"/><div class="flex flex-col min-w-0"><span class="font-label-caps text-label-caps text-secondary uppercase truncate leading-none">IC · UFRJ</span><span class="font-headline-sm text-headline-sm text-primary font-bold truncate leading-tight">Missões</span></div></div><div class="flex items-center gap-space-xs shrink-0"><div class="flex items-center gap-1 bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-1 rounded-full shadow-[0_2px_8px_rgba(245,158,11,0.2)]"><span class="material-symbols-outlined text-tertiary text-[18px]">military_tech</span><span class="font-label-caps text-label-caps text-tertiary font-bold">NV. 1</span></div><button aria-label="Configurações de som e progresso" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors active:scale-95"><span class="material-symbols-outlined text-[22px]">volume_up</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full px-margin-mobile py-space-sm space-y-space-md max-w-[800px] mx-auto relative select-none">
+<!-- Confetti Container -->
+<div class="fixed inset-0 pointer-events-none z-50 overflow-hidden" id="confetti-holder"></div>
+<!-- Micro Toast Gamificado -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 scale-90 transition-all duration-300 flex items-center gap-space-xs bg-primary text-on-primary px-space-md py-space-xs rounded-full shadow-xl" id="toast-xp">
+<span class="material-symbols-outlined text-tertiary-fixed text-[20px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-headline-sm text-headline-sm tracking-tight text-white" id="toast-text">+50 XP! Mandou bem, bixo!</span>
+</div>
+<!-- Hero: Status & Gamification Dashboard -->
+<section class="bg-primary text-on-primary rounded-xl p-space-md shadow-md relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-secondary/30 blur-2xl pointer-events-none"></div>
+<div class="absolute -left-6 -top-6 w-28 h-28 rounded-full bg-tertiary-container/40 blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col space-y-space-sm">
+<!-- Upper row: Rank & Streak -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed shadow-sm">
+<span class="material-symbols-outlined text-[24px]">school</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-primary-container uppercase tracking-wider">Patente Calouro</span>
+<span class="font-headline-md text-headline-md text-white font-bold leading-tight flex items-center gap-1.5">
+              Nível 2: Bicho Curioso
+              <span class="material-symbols-outlined text-tertiary-fixed text-[18px]">verified</span>
+</span>
+</div>
+</div>
+<div class="bg-surface-container-highest/20 backdrop-blur-md px-space-sm py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-tertiary-fixed-dim text-[18px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-caps text-label-caps text-white font-bold">4 DIAS</span>
+</div>
+</div>
+<!-- XP Bar & Counter -->
+<div class="bg-surface-container-highest/15 rounded-lg p-space-sm backdrop-blur-sm space-y-1.5">
+<div class="flex justify-between items-center text-white">
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-headline-sm font-bold text-tertiary-fixed" id="current-xp-txt">640</span>
+<span class="font-body-sm text-body-sm text-on-primary-container">/ 1890 XP</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-primary-container font-semibold" id="xp-percent-txt">34% Concluído</span>
+</div>
+<div class="w-full h-3 bg-surface-container-highest/30 rounded-full overflow-hidden p-0.5">
+<div class="h-full bg-secondary-container rounded-full transition-all duration-500 ease-out shadow-[0_0_12px_rgba(91,184,254,0.6)]" id="xp-progress-bar" style="width: 34%;"></div>
+</div>
+<div class="flex justify-between items-center text-white pt-1">
+<span class="font-body-sm text-body-sm text-on-primary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+<span id="completed-count-txt">13 de 26 missões</span>
+</span>
+<span class="font-label-caps text-label-caps text-tertiary-fixed flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">military_tech</span> Próx: Veterano Jr.
+          </span>
+</div>
+</div>
+<!-- Cookie / LocalStorage Notice -->
+<div class="bg-surface-container-lowest/10 rounded-lg px-space-sm py-1.5 flex items-center gap-space-xs text-on-primary-container">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed">save</span>
+<p class="font-body-sm text-body-sm text-white/90 leading-snug">
+          Progresso salvo automaticamente no seu navegador via <strong class="font-bold text-white">localStorage</strong> — sem necessidade de login!
+        </p>
+</div>
+</div>
+</section>
+<!-- Categorias (Filtros Horizontais com rolagem suave) -->
+<section class="space-y-1">
+<div class="flex items-center justify-between px-0.5">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Filtrar Missões</span>
+<span class="font-body-sm text-body-sm text-secondary font-semibold" id="filtered-counter">26 disponíveis</span>
+</div>
+<div class="flex gap-space-xs overflow-x-auto pb-1 pt-1 no-scrollbar -mx-margin-mobile px-margin-mobile">
+<button class="cat-pill active-pill whitespace-nowrap px-space-md py-1.5 rounded-full font-label-caps text-label-caps transition-all flex items-center gap-1.5 bg-primary text-on-primary shadow-sm" onclick="filterCategory('todas', this)">
+<span>Todas</span>
+<span class="bg-white/20 text-white px-1.5 py-0.2 rounded-full text-[11px]" id="badge-count-todas">26</span>
+</button>
+<button class="cat-pill whitespace-nowrap px-space-md py-1.5 rounded-full font-label-caps text-label-caps transition-all flex items-center gap-1.5 bg-surface-container-high text-on-surface-variant hover:bg-surface-variant" onclick="filterCategory('fundao', this)">
+<span>🏛️ Fundão &amp; Locais</span>
+</button>
+<button class="cat-pill whitespace-nowrap px-space-md py-1.5 rounded-full font-label-caps text-label-caps transition-all flex items-center gap-1.5 bg-surface-container-high text-on-surface-variant hover:bg-surface-variant" onclick="filterCategory('ic', this)">
+<span>💻 Sobrevivência IC</span>
+</button>
+<button class="cat-pill whitespace-nowrap px-space-md py-1.5 rounded-full font-label-caps text-label-caps transition-all flex items-center gap-1.5 bg-surface-container-high text-on-surface-variant hover:bg-surface-variant" onclick="filterCategory('social', this)">
+<span>🤝 Social &amp; CAINFO</span>
+</button>
+<button class="cat-pill whitespace-nowrap px-space-md py-1.5 rounded-full font-label-caps text-label-caps transition-all flex items-center gap-1.5 bg-surface-container-high text-on-surface-variant hover:bg-surface-variant" onclick="filterCategory('extensoes', this)">
+<span>🚀 Extensões</span>
+</button>
+</div>
+</section>
+<!-- Lista de Missões -->
+<section class="space-y-space-xs" id="missions-list">
+<!-- Missão 1 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="fundao" data-xp="50">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input checked="" class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 1, 50)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug line-through text-outline">Almoçar no bandejão</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Primeiro contato com a fila mística do CT/Central. Leve a carteirinha ou app!</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold shadow-sm">+50 XP</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-caps text-label-caps font-bold">Crucial</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🏛️ Fundão</span>
+<span class="status-indicator font-label-caps text-label-caps text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Concluída
+        </span>
+</div>
+</article>
+<!-- Missão 2 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="fundao" data-xp="50">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input checked="" class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 2, 50)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug line-through text-outline">Andar no ônibus interno da UFRJ</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">O famoso Circular! Descubra a diferença de rotas para não parar na prefeitura universitária sem querer.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold shadow-sm">+50 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🏛️ Fundão</span>
+<span class="status-indicator font-label-caps text-label-caps text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Concluída
+        </span>
+</div>
+</article>
+<!-- Missão 3 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="ic" data-xp="100">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input checked="" class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 3, 100)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug line-through text-outline">Visitar o Museu da Computação</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">No CCMN / NCE: relíquias dos primórdios da computação no Brasil e fitas magnéticas históricas.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold shadow-sm">+100 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-caps text-label-caps">💻 IC &amp; NCE</span>
+<span class="status-indicator font-label-caps text-label-caps text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Concluída
+        </span>
+</div>
+</article>
+<!-- Missão 4 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="ic" data-xp="80">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input checked="" class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 4, 80)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug line-through text-outline">Adquirir o seu email IC.UFRJ.BR</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Identidade de hacker federal: seu passaporte de acesso aos laboratórios e servidores.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold shadow-sm">+80 XP</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps font-bold">Sobrevivência</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-caps text-label-caps">💻 IC</span>
+<span class="status-indicator font-label-caps text-label-caps text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Concluída
+        </span>
+</div>
+</article>
+<!-- Missão 5 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="ic" data-xp="40">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input checked="" class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 5, 40)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug line-through text-outline">Adicionar sua foto no SIGA</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Para a chamada não ser só uma silhueta cinza e adiantar a emissão do DRE oficial.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold shadow-sm">+40 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🎓 Acadêmico</span>
+<span class="status-indicator font-label-caps text-label-caps text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Concluída
+        </span>
+</div>
+</article>
+<!-- Missão 6 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="social" data-xp="60">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input checked="" class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 6, 60)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug line-through text-outline">Entrar nos grupos do CAINFO (Telegram)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Canal geral do CC, matérias, trocas de dicas e avisos da coordenação.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold shadow-sm">+60 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🤝 Social</span>
+<span class="status-indicator font-label-caps text-label-caps text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Concluída
+        </span>
+</div>
+</article>
+<!-- Missão 7 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="ic" data-xp="50">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input checked="" class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 7, 50)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug line-through text-outline">Entrar nos grupos das disciplinas</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cálculo I, Álgebra Linear, IC e Laboratório de Programação. Companheirismo nas listas!</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold shadow-sm">+50 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🎓 Acadêmico</span>
+<span class="status-indicator font-label-caps text-label-caps text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Concluída
+        </span>
+</div>
+</article>
+<!-- Missão 8 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="ic" data-xp="50">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input checked="" class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 8, 50)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug line-through text-outline">Entrar no classroom das disciplinas</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Garanta que seu e-mail institucional está logado para ver materiais e listas.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold shadow-sm">+50 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🎓 Acadêmico</span>
+<span class="status-indicator font-label-caps text-label-caps text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Concluída
+        </span>
+</div>
+</article>
+<!-- Missão 9 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="ic" data-xp="30">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input checked="" class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 9, 30)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug line-through text-outline">Acessar o site do IC</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Conhecer a grade curricular oficial, fluxograma do curso e corpo docente.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold shadow-sm">+30 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-caps text-label-caps">💻 IC</span>
+<span class="status-indicator font-label-caps text-label-caps text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Concluída
+        </span>
+</div>
+</article>
+<!-- Missão 10 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="ic" data-xp="70">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input checked="" class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 10, 70)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug line-through text-outline">Procurar orientação acadêmica</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tirar dúvidas sobre trancamento, requisitos e equivalências com os professores orientadores.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold shadow-sm">+70 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🎓 Acadêmico</span>
+<span class="status-indicator font-label-caps text-label-caps text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Concluída
+        </span>
+</div>
+</article>
+<!-- Missão 11 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="social" data-xp="80">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input checked="" class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 11, 80)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug line-through text-outline">Visitar o CAINFO</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Conhecer o Centro Acadêmico: sofás, bate-papo, jogos e acolhimento dos veteranos.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold shadow-sm">+80 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🤝 Social</span>
+<span class="status-indicator font-label-caps text-label-caps text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Concluída
+        </span>
+</div>
+</article>
+<!-- Missão 12 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="fundao" data-xp="70">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input checked="" class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 12, 70)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug line-through text-outline">Visitar as bibliotecas CCMN, NCE</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ambiente silencioso, ar condicionado e livros clássicos de Cálculo e Algoritmos.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold shadow-sm">+70 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🏛️ Fundão</span>
+<span class="status-indicator font-label-caps text-label-caps text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Concluída
+        </span>
+</div>
+</article>
+<!-- Missão 13 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="ic" data-xp="80">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input checked="" class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 13, 80)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug line-through text-outline">Visitar os LAB 1, LAB 3</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">O berço dos seus códigos em C e das noites de compilação sem warnings.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold shadow-sm">+80 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-caps text-label-caps">💻 IC</span>
+<span class="status-indicator font-label-caps text-label-caps text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> Concluída
+        </span>
+</div>
+</article>
+<!-- Missão 14 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="fundao" data-xp="60">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 14, 60)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug">Conhecer a copa do NCE e decania</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Local clássico de café, microondas e pontos de apoio institucional.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps font-bold">+60 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🧭 Explorador</span>
+<span class="status-indicator font-label-caps text-label-caps text-outline font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span> Pendente
+        </span>
+</div>
+</article>
+<!-- Missão 15 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="fundao" data-xp="70">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 15, 70)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug">Visitar o Museu Geodiversidade</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Fica no próprio CCMN! Réplicas de dinossauros, fósseis e meteoritos fascinantes.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps font-bold">+70 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🧭 Explorador</span>
+<span class="status-indicator font-label-caps text-label-caps text-outline font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span> Pendente
+        </span>
+</div>
+</article>
+<!-- Missão 16 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="extensoes" data-xp="120">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 16, 120)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug">Conhecer as extensões do IC</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Analytica (IA/Data), GRIS (Segurança), Minervas Digitais &amp; Museu Suvaco de Cristo.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold shadow-sm">+120 XP</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-caps text-label-caps font-bold">Impulso</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-caps text-label-caps">🚀 Extensões</span>
+<span class="status-indicator font-label-caps text-label-caps text-outline font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span> Pendente
+        </span>
+</div>
+</article>
+<!-- Missão 17 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="extensoes" data-xp="80">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 17, 80)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug">Conhecer a EJCM</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Empresa Júnior de Consultoria em Computação da UFRJ e vivência de mercado.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps font-bold">+80 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-caps text-label-caps">🚀 Extensões</span>
+<span class="status-indicator font-label-caps text-label-caps text-outline font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span> Pendente
+        </span>
+</div>
+</article>
+<!-- Missão 18 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="fundao" data-xp="60">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 18, 60)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug">Conhecer o CT (Centro de Tecnologia)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Blocos A até I, salões de engenharia, xerox e os lanches clássicos.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps font-bold">+60 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🏛️ Fundão</span>
+<span class="status-indicator font-label-caps text-label-caps text-outline font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span> Pendente
+        </span>
+</div>
+</article>
+<!-- Missão 19 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="fundao" data-xp="60">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 19, 60)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug">Conhecer o CCS (Centro de Ciências da Saúde)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Prédio colossal da medicina, biologia e com outro bandejão disputado.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps font-bold">+60 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🏛️ Fundão</span>
+<span class="status-indicator font-label-caps text-label-caps text-outline font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span> Pendente
+        </span>
+</div>
+</article>
+<!-- Missão 20 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="fundao" data-xp="100">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 20, 100)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug">Conhecer o subsolo do CCS</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">O autêntico labirinto do Fundão. Entre acompanhado para não virar lenda urbana!</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold shadow-sm">+100 XP</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-caps text-label-caps font-bold">Desafio</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🏛️ Fundão</span>
+<span class="status-indicator font-label-caps text-label-caps text-outline font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span> Pendente
+        </span>
+</div>
+</article>
+<!-- Missão 21 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="social" data-xp="60">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 21, 60)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug">Conhecer o COBAL</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ponto de encontro social, quitutes e cerveja gelada pós-prova no CCMN.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps font-bold">+60 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🤝 Social</span>
+<span class="status-indicator font-label-caps text-label-caps text-outline font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span> Pendente
+        </span>
+</div>
+</article>
+<!-- Missão 22 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="fundao" data-xp="50">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 22, 50)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug">Conhecer o prédio de Letras</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Arquitetura acolhedora, jardins abertos e cafés gostosos para respirar ar puro.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps font-bold">+50 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🧭 Explorador</span>
+<span class="status-indicator font-label-caps text-label-caps text-outline font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span> Pendente
+        </span>
+</div>
+</article>
+<!-- Missão 23 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="social" data-xp="150">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 23, 150)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug">Participar da Semana de Integração</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Palestras de recepção, gincana de calouros e apresentação dos laboratórios.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold shadow-sm">+150 XP</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-caps text-label-caps font-bold">Épica</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🤝 Social</span>
+<span class="status-indicator font-label-caps text-label-caps text-outline font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span> Pendente
+        </span>
+</div>
+</article>
+<!-- Missão 24 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="social" data-xp="100">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 24, 100)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug">Participar da Pizzada</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">A tradicional celebração dos calouros com veteranos no início do semestre.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-label-caps font-bold shadow-sm">+100 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🤝 Social</span>
+<span class="status-indicator font-label-caps text-label-caps text-outline font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span> Pendente
+        </span>
+</div>
+</article>
+<!-- Missão 25 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="social" data-xp="40">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 25, 40)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug">Seguir o Instagram do CAINFO</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">@cainfoufrj: eventos, memes, carteirinhas e comunicados estudantis em primeira mão.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps font-bold">+40 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🤝 Social</span>
+<span class="status-indicator font-label-caps text-label-caps text-outline font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span> Pendente
+        </span>
+</div>
+</article>
+<!-- Missão 26 -->
+<article class="mission-card relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs" data-cat="social" data-xp="40">
+<div class="flex items-start justify-between gap-space-sm">
+<label class="flex items-start gap-space-sm cursor-pointer flex-1 min-w-0">
+<input class="mission-chk mt-1 w-5 h-5 rounded cursor-pointer accent-secondary" onchange="toggleMission(this, 26, 40)" type="checkbox"/>
+<div class="flex flex-col min-w-0">
+<span class="mission-title font-body-bold text-body-bold text-on-surface leading-snug">Seguir o Spotted UFRJ</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Para acompanhar os flagrantes, achados &amp; perdidos e os momentos icônicos do campus.</span>
+</div>
+</label>
+<div class="flex flex-col items-end gap-1 shrink-0">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps font-bold">+40 XP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 text-on-surface-variant">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">🤝 Social</span>
+<span class="status-indicator font-label-caps text-label-caps text-outline font-normal flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span> Pendente
+        </span>
+</div>
+</article>
+</section>
+<!-- Card Motivacional Final -->
+<aside class="bg-surface-container-low rounded-xl p-space-md flex items-center gap-space-sm shadow-sm">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined text-[28px]">tips_and_updates</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Dica de Veterano</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+        Não tente gabaritar tudo na primeira semana! O Fundão é gigante e cada etapa tem o seu tempo. Dúvidas? Cole no CAINFO!
+      </span>
+</div>
+</aside>
+</div>
+<script>
+  const TOTAL_XP_AVAILABLE = 1890;
+  const STORAGE_KEY = 'ic_calouro_missions_progress_v1';
+
+  // Carregar ou inicializar progresso
+  function getSavedState() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) return JSON.parse(saved);
+    } catch(e) {}
+    // default: primeiras 13 completas
+    return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+  }
+
+  function saveState(completedIds) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(completedIds));
+    } catch(e) {}
+  }
+
+  function recalculateXP() {
+    const cards = document.querySelectorAll('.mission-card');
+    let totalXp = 0;
+    let completedCount = 0;
+    const completedIds = [];
+
+    cards.forEach((card, idx) => {
+      const chk = card.querySelector('.mission-chk');
+      const xpVal = parseInt(card.getAttribute('data-xp')) || 0;
+      const missionId = idx + 1;
+
+      if (chk.checked) {
+        totalXp += xpVal;
+        completedCount++;
+        completedIds.push(missionId);
+      }
+    });
+
+    const percent = Math.min(100, Math.round((totalXp / TOTAL_XP_AVAILABLE) * 100));
+
+    // Atualiza dashboard
+    const xpTxt = document.getElementById('current-xp-txt');
+    const xpBar = document.getElementById('xp-progress-bar');
+    const xpPercentTxt = document.getElementById('xp-percent-txt');
+    const completedCountTxt = document.getElementById('completed-count-txt');
+
+    if (xpTxt) xpTxt.textContent = totalXp;
+    if (xpBar) xpBar.style.width = percent + '%';
+    if (xpPercentTxt) xpPercentTxt.textContent = percent + '% Concluído';
+    if (completedCountTxt) completedCountTxt.textContent = `${completedCount} de ${cards.length} missões`;
+
+    saveState(completedIds);
+  }
+
+  function toggleMission(checkbox, id, xp) {
+    const card = checkbox.closest('.mission-card');
+    const title = card.querySelector('.mission-title');
+    const status = card.querySelector('.status-indicator');
+
+    if (checkbox.checked) {
+      title.classList.add('line-through', 'text-outline');
+      status.className = 'status-indicator font-label-caps text-label-caps text-secondary font-bold flex items-center gap-1';
+      status.innerHTML = '<span class="material-symbols-outlined text-[16px]">check_circle</span> Concluída';
+      showToast(`+${xp} XP! Mandou bem, bixo!`);
+      triggerConfetti();
+    } else {
+      title.classList.remove('line-through', 'text-outline');
+      status.className = 'status-indicator font-label-caps text-label-caps text-outline font-normal flex items-center gap-1';
+      status.innerHTML = '<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span> Pendente';
+    }
+
+    recalculateXP();
+  }
+
+  function showToast(text) {
+    const toast = document.getElementById('toast-xp');
+    const toastText = document.getElementById('toast-text');
+    if (!toast) return;
+    toastText.textContent = text;
+    toast.classList.remove('opacity-0', 'scale-90');
+    toast.classList.add('opacity-100', 'scale-100');
+
+    clearTimeout(window._toastTimeout);
+    window._toastTimeout = setTimeout(() => {
+      toast.classList.add('opacity-0', 'scale-90');
+      toast.classList.remove('opacity-100', 'scale-100');
+    }, 2200);
+  }
+
+  function triggerConfetti() {
+    const holder = document.getElementById('confetti-holder');
+    if (!holder) return;
+
+    const colors = ['#004a80', '#5bb8fe', '#ffddb8', '#ffb95f', '#fca416', '#286198'];
+    for (let i = 0; i < 28; i++) {
+      const p = document.createElement('div');
+      const size = Math.random() * 8 + 6;
+      p.className = 'absolute rounded-sm pointer-events-none';
+      p.style.width = size + 'px';
+      p.style.height = size + 'px';
+      p.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      p.style.left = (Math.random() * 80 + 10) + 'vw';
+      p.style.top = '10vh';
+      p.style.opacity = '1';
+      p.style.transform = `rotate(${Math.random() * 360}deg)`;
+      p.style.transition = 'all 1.4s cubic-bezier(0.25, 1, 0.5, 1)';
+
+      holder.appendChild(p);
+
+      const targetX = (Math.random() - 0.5) * 160;
+      const targetY = Math.random() * 400 + 180;
+      const targetRotate = Math.random() * 720;
+
+      requestAnimationFrame(() => {
+        p.style.transform = `translate(${targetX}px, ${targetY}px) rotate(${targetRotate}deg)`;
+        p.style.opacity = '0';
+      });
+
+      setTimeout(() => p.remove(), 1500);
+    }
+  }
+
+  function filterCategory(cat, btn) {
+    document.querySelectorAll('.cat-pill').forEach(b => {
+      b.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm');
+      b.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+    });
+    btn.classList.add('bg-primary', 'text-on-primary', 'shadow-sm');
+    btn.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+
+    const cards = document.querySelectorAll('.mission-card');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const cardCat = card.getAttribute('data-cat');
+      if (cat === 'todas' || cardCat === cat) {
+        card.style.display = 'flex';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    const counter = document.getElementById('filtered-counter');
+    if (counter) counter.textContent = `${visibleCount} exibidas`;
+  }
+
+  // Inicialização no load
+  window.addEventListener('DOMContentLoaded', () => {
+    const saved = getSavedState();
+    const cards = document.querySelectorAll('.mission-card');
+    
+    cards.forEach((card, idx) => {
+      const chk = card.querySelector('.mission-chk');
+      const missionId = idx + 1;
+      const isChecked = saved.includes(missionId);
+      chk.checked = isChecked;
+
+      const title = card.querySelector('.mission-title');
+      const status = card.querySelector('.status-indicator');
+
+      if (isChecked) {
+        title.classList.add('line-through', 'text-outline');
+        status.className = 'status-indicator font-label-caps text-label-caps text-secondary font-bold flex items-center gap-1';
+        status.innerHTML = '<span class="material-symbols-outlined text-[16px]">check_circle</span> Concluída';
+      } else {
+        title.classList.remove('line-through', 'text-outline');
+        status.className = 'status-indicator font-label-caps text-label-caps text-outline font-normal flex items-center gap-1';
+        status.innerHTML = '<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span> Pendente';
+      }
+    });
+
+    recalculateXP();
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,43,73,0.06)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-20 px-space-xs"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-all active:scale-95" data-path="missoes" href="#"><span class="material-symbols-outlined text-[24px]">assignment_turned_in</span><span class="font-label-caps text-label-caps">Missões</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-all active:scale-95" data-path="conquistas" href="#"><span class="material-symbols-outlined text-[24px]">trophy</span><span class="font-label-caps text-label-caps">Conquistas</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-all active:scale-95" data-path="mapa-do-fundao" href="#"><span class="material-symbols-outlined text-[24px]">explore</span><span class="font-label-caps text-label-caps">Mapa</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-all active:scale-95" data-path="extensoes-ic" href="#"><span class="material-symbols-outlined text-[24px]">groups</span><span class="font-label-caps text-label-caps">Extensões</span></a></div></nav></body></html>

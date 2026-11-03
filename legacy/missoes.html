@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-fixed-dim": "#93ccff", "outline-variant": "#c2c7d1", "surface-variant": "#e0e3e5", "surface-dim": "#d8dadc", "surface-tint": "#286198", "on-surface-variant": "#42474f", "primary-fixed": "#d2e4ff", "secondary": "#006398", "surface-container-lowest": "#ffffff", "surface": "#f7f9fb", "surface-bright": "#f7f9fb", "inverse-primary": "#9fcaff", "on-error-container": "#93000a", "secondary-fixed": "#cce5ff", "surface-container-low": "#f2f4f6", "inverse-on-surface": "#eff1f3", "primary": "#00335b", "on-secondary-fixed": "#001d31", "on-tertiary": "#ffffff", "on-primary-fixed": "#001d37", "surface-container-highest": "#e0e3e5", "on-primary-container": "#88baf7", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#653e00", "on-primary": "#ffffff", "inverse-surface": "#2d3133", "on-background": "#191c1e", "secondary-container": "#5bb8fe", "background": "#f7f9fb", "surface-container-high": "#e6e8ea", "error-container": "#ffdad6", "on-secondary-container": "#00476e", "tertiary": "#482b00", "tertiary-container": "#673f00", "primary-fixed-dim": "#9fcaff", "tertiary-fixed": "#ffddb8", "tertiary-fixed-dim": "#ffb95f", "primary-container": "#004a80", "error": "#ba1a1a", "on-secondary-fixed-variant": "#004b73", "on-tertiary-container": "#fca416", "surface-container": "#eceef0", "on-primary-fixed-variant": "#00497e", "on-surface": "#191c1e", "outline": "#727781", "on-secondary": "#ffffff", "on-tertiary-fixed": "#2a1700" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter-mobile": "1rem", "margin": "1.875rem", "space-xs": "0.25rem", "gutter": "1.25rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "space-xl": "2rem", "space-md": "1rem", "space-lg": "1.5rem" }, fontFamily: { "headline-lg": ["Montserrat"], "headline-sm": ["Montserrat"], "headline-lg-mobile": ["Montserrat"], "code-snippet": ["JetBrains Mono"], "label-caps": ["Montserrat"], "display-lg": ["Montserrat"], "body-bold": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Montserrat"], "display-lg-mobile": ["Montserrat"], "body-base": ["Inter"] }, fontSize: { "headline-lg": ["26px", { lineHeight: "34px", letterSpacing: "-0.01em", fontWeight: "700" }], "headline-sm": ["17px", { lineHeight: "24px", fontWeight: "600" }], "headline-lg-mobile": ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "700" }], "code-snippet": ["14px", { lineHeight: "20px", fontWeight: "400" }], "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.06em", fontWeight: "700" }], "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "800" }], "body-bold": ["16px", { lineHeight: "26px", fontWeight: "600" }], "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }], "display-lg-mobile": ["26px", { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "800" }], "body-base": ["16px", { lineHeight: "26px", fontWeight: "400" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-base text-body-base text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="IC UFRJ Calouros Logo" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1W_IuotRg3PNakEcyNDEzPOzGWJDoptbuQxDQbztDfasGIwgZiEBckhJX-ynl1hs5BAJWqjhrJtWft-pXlwgvHW7nDb0vVHV4pV-TbOJ8jdZOEsE1hyzYzFoVmP03ego6G_r-7yODx32PYW8rcPNCtTLeXhCpZY4CGrUz1lTCN1g1UEJNT5B8vxwruIN_Ugmj2ClOS5GvNHf4gn8J6K8fJkiTJVXgbs3pN9ybAxqqlS8SekOe2IbMySBPUF"/><div class="flex flex-col min-w-0"><span class="font-label-caps text-label-caps text-secondary uppercase truncate leading-none">IC · UFRJ</span><span class="font-headline-sm text-headline-sm text-primary font-bold truncate leading-tight">Conquistas</span></div></div><div class="flex items-center gap-space-xs shrink-0"><div class="flex items-center gap-1 bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-1 rounded-full shadow-[0_2px_8px_rgba(245,158,11,0.2)]"><span class="material-symbols-outlined text-tertiary text-[18px]">military_tech</span><span class="font-label-caps text-label-caps text-tertiary font-bold">NV. 1</span></div><button aria-label="Configurações de som e progresso" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors active:scale-95"><span class="material-symbols-outlined text-[22px]">volume_up</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full px-margin-mobile py-space-sm space-y-space-md">
+<!-- Overview Trophy Card -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary to-primary-container p-space-md text-on-primary shadow-xl">
+<div class="absolute -right-10 -bottom-10 w-36 h-36 rounded-full bg-secondary-container/20 blur-2xl pointer-events-none"></div>
+<div class="absolute -left-6 -top-6 w-28 h-28 rounded-full bg-tertiary-fixed/15 blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed shadow-md shadow-tertiary/20">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<div>
+<span class="font-label-caps text-label-caps text-on-primary-container uppercase tracking-wider block">Progresso da Jornada</span>
+<h2 class="font-headline-sm text-headline-sm text-on-primary font-bold">Mestre da Ilha do Fundão</h2>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-display-lg-mobile text-display-lg-mobile font-extrabold text-tertiary-fixed">50%</span>
+<span class="font-label-caps text-label-caps text-on-primary-container">8 de 16 Badges</span>
+</div>
+</div>
+<!-- Animated-style Bar -->
+<div class="w-full bg-surface-dim/30 rounded-full h-3.5 p-0.5 mt-1 backdrop-blur-sm">
+<div class="bg-gradient-to-r from-tertiary-fixed to-secondary-container h-full rounded-full transition-all duration-700 ease-out shadow-sm" style="width: 50%;"></div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-caps text-label-caps text-on-primary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">verified</span> 8 Desbloqueadas
+        </span>
+<span class="font-label-caps text-label-caps text-on-primary-container/80 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">lock</span> 8 Restantes
+        </span>
+</div>
+</div>
+</div>
+<!-- Interactive Filter Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+<button class="badge-filter px-3.5 py-1.5 rounded-full font-label-caps text-label-caps bg-primary text-on-primary shadow-sm active:scale-95 transition-all" id="filter-all" onclick="filterBadges('all')">
+      Todos (12)
+    </button>
+<button class="badge-filter px-3.5 py-1.5 rounded-full font-label-caps text-label-caps bg-surface-container text-on-surface-variant hover:text-primary active:scale-95 transition-all" id="filter-unlocked" onclick="filterBadges('unlocked')">
+      🏆 Desbloqueados (6)
+    </button>
+<button class="badge-filter px-3.5 py-1.5 rounded-full font-label-caps text-label-caps bg-surface-container text-on-surface-variant hover:text-primary active:scale-95 transition-all" id="filter-locked" onclick="filterBadges('locked')">
+      🔒 Em Progresso (6)
+    </button>
+</div>
+<!-- Badges Grid Stream -->
+<div class="grid grid-cols-1 gap-3" id="badges-container">
+<!-- 1. Bandejão Survivor (Unlocked) -->
+<div class="badge-card relative flex items-start gap-space-sm p-3.5 rounded-xl bg-surface-container-lowest shadow-md hover:shadow-lg transition-all duration-200" data-status="unlocked">
+<div class="flex items-center justify-center w-14 h-14 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed shrink-0 shadow-md shadow-tertiary-container/10">
+<span class="material-symbols-outlined text-[30px]" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold truncate">Bandejão Survivor</h3>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full font-label-caps text-label-caps bg-tertiary-fixed text-on-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Concluído
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">Almoçou no bandejão e encarou a fila da hora do rush!</p>
+<span class="font-label-caps text-label-caps text-tertiary mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span> +50 XP UFRJ
+        </span>
+</div>
+</div>
+<!-- 2. Mestre do Circular (Unlocked) -->
+<div class="badge-card relative flex items-start gap-space-sm p-3.5 rounded-xl bg-surface-container-lowest shadow-md hover:shadow-lg transition-all duration-200" data-status="unlocked">
+<div class="flex items-center justify-center w-14 h-14 rounded-xl bg-secondary-fixed text-on-secondary-fixed shrink-0 shadow-md shadow-secondary/10">
+<span class="material-symbols-outlined text-[30px]" style="font-variation-settings: 'FILL' 1;">directions_bus</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold truncate">Mestre do Circular</h3>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full font-label-caps text-label-caps bg-secondary-fixed text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Concluído
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">Pegou o ônibus interno da UFRJ sem errar o sentido!</p>
+<span class="font-label-caps text-label-caps text-secondary mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">map</span> Sentido Horário &amp; Anti-horário
+        </span>
+</div>
+</div>
+<!-- 3. Root do IC (Unlocked) -->
+<div class="badge-card relative flex items-start gap-space-sm p-3.5 rounded-xl bg-surface-container-lowest shadow-md hover:shadow-lg transition-all duration-200" data-status="unlocked">
+<div class="flex items-center justify-center w-14 h-14 rounded-xl bg-primary-fixed text-on-primary-fixed shrink-0 shadow-md shadow-primary/10">
+<span class="material-symbols-outlined text-[30px]" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold truncate">Root do IC</h3>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full font-label-caps text-label-caps bg-primary-fixed text-on-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Concluído
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">Email institucional @ic.ufrj.br ativado com sucesso.</p>
+<span class="font-code-snippet text-code-snippet text-secondary mt-1 bg-surface-container px-2 py-0.5 rounded w-fit">
+          whoami: calouro@ic.ufrj.br
+        </span>
+</div>
+</div>
+<!-- 4. Espeleólogo do CCS (Locked) -->
+<div class="badge-card relative flex items-start gap-space-sm p-3.5 rounded-xl bg-surface-container-low opacity-80 hover:opacity-100 transition-all duration-200" data-status="locked">
+<div class="flex items-center justify-center w-14 h-14 rounded-xl bg-surface-dim text-outline shrink-0">
+<span class="material-symbols-outlined text-[28px]">explore_off</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface-variant font-bold truncate">Espeleólogo do CCS</h3>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full font-label-caps text-label-caps bg-surface-variant text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[13px]">lock</span> Bloqueado
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-1 leading-snug">Desceu até o lendário subsolo do CCS e conseguiu achar a saída.</p>
+<span class="font-label-caps text-label-caps text-on-surface-variant/70 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">travel_explore</span> Requisito: Visitar o CCS Bloco K
+        </span>
+</div>
+</div>
+<!-- 5. Pizzada Veteran (Locked) -->
+<div class="badge-card relative flex items-start gap-space-sm p-3.5 rounded-xl bg-surface-container-low opacity-80 hover:opacity-100 transition-all duration-200" data-status="locked">
+<div class="flex items-center justify-center w-14 h-14 rounded-xl bg-surface-dim text-outline shrink-0">
+<span class="material-symbols-outlined text-[28px]">local_pizza</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface-variant font-bold truncate">Pizzada Veteran</h3>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full font-label-caps text-label-caps bg-surface-variant text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[13px]">lock</span> Bloqueado
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-1 leading-snug">Participou da confraternização oficial da calourada de CC.</p>
+<span class="font-label-caps text-label-caps text-on-surface-variant/70 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">celebration</span> Evento semestral do CAINFO
+        </span>
+</div>
+</div>
+<!-- 6. Curador Digital (Unlocked) -->
+<div class="badge-card relative flex items-start gap-space-sm p-3.5 rounded-xl bg-surface-container-lowest shadow-md hover:shadow-lg transition-all duration-200" data-status="unlocked">
+<div class="flex items-center justify-center w-14 h-14 rounded-xl bg-secondary-fixed-dim text-on-secondary-fixed-variant shrink-0 shadow-md">
+<span class="material-symbols-outlined text-[30px]" style="font-variation-settings: 'FILL' 1;">museum</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold truncate">Curador Digital</h3>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full font-label-caps text-label-caps bg-secondary-fixed text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Concluído
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">Visitou o Museu da Computação e explorou a história da TI na UFRJ.</p>
+<span class="font-label-caps text-label-caps text-secondary mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">memory</span> NCE - Pavimento 1
+        </span>
+</div>
+</div>
+<!-- 7. Futuro Pesquisador (Unlocked) -->
+<div class="badge-card relative flex items-start gap-space-sm p-3.5 rounded-xl bg-surface-container-lowest shadow-md hover:shadow-lg transition-all duration-200" data-status="unlocked">
+<div class="flex items-center justify-center w-14 h-14 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed shrink-0 shadow-md">
+<span class="material-symbols-outlined text-[30px]" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold truncate">Futuro Pesquisador</h3>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full font-label-caps text-label-caps bg-tertiary-fixed text-on-tertiary-fixed shrink-0">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Concluído
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">Conheceu o GRIS, Analytica, Minervas Digitais e Suvaco de Cristo.</p>
+<span class="font-label-caps text-label-caps text-tertiary mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">science</span> 4 Grupos de Pesquisa/Extensão
+        </span>
+</div>
+</div>
+<!-- 8. Empresário Júnior (Locked) -->
+<div class="badge-card relative flex items-start gap-space-sm p-3.5 rounded-xl bg-surface-container-low opacity-80 hover:opacity-100 transition-all duration-200" data-status="locked">
+<div class="flex items-center justify-center w-14 h-14 rounded-xl bg-surface-dim text-outline shrink-0">
+<span class="material-symbols-outlined text-[28px]">business_center</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface-variant font-bold truncate">Empresário Júnior</h3>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full font-label-caps text-label-caps bg-surface-variant text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[13px]">lock</span> Bloqueado
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-1 leading-snug">Descobriu os projetos inovadores da EJCM.</p>
+<span class="font-label-caps text-label-caps text-on-surface-variant/70 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">badge</span> Palestra de Apresentação da EJCM
+        </span>
+</div>
+</div>
+<!-- 9. Sintonizado na Rede (Unlocked) -->
+<div class="badge-card relative flex items-start gap-space-sm p-3.5 rounded-xl bg-surface-container-lowest shadow-md hover:shadow-lg transition-all duration-200" data-status="unlocked">
+<div class="flex items-center justify-center w-14 h-14 rounded-xl bg-secondary-fixed text-on-secondary-fixed shrink-0 shadow-md">
+<span class="material-symbols-outlined text-[30px]" style="font-variation-settings: 'FILL' 1;">cell_tower</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold truncate">Sintonizado na Rede</h3>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full font-label-caps text-label-caps bg-secondary-fixed text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Concluído
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">Conectou-se ao CAINFO, grupos de matérias e Spotted UFRJ.</p>
+<span class="font-label-caps text-label-caps text-secondary mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">groups</span> Telegram &amp; Discord Conectados
+        </span>
+</div>
+</div>
+<!-- 10. Rato de Biblioteca (Locked) -->
+<div class="badge-card relative flex items-start gap-space-sm p-3.5 rounded-xl bg-surface-container-low opacity-80 hover:opacity-100 transition-all duration-200" data-status="locked">
+<div class="flex items-center justify-center w-14 h-14 rounded-xl bg-surface-dim text-outline shrink-0">
+<span class="material-symbols-outlined text-[28px]">local_library</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface-variant font-bold truncate">Rato de Biblioteca</h3>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full font-label-caps text-label-caps bg-surface-variant text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[13px]">lock</span> Bloqueado
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-1 leading-snug">Visitou as bibliotecas do CCMN e NCE.</p>
+<span class="font-label-caps text-label-caps text-on-surface-variant/70 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">menu_book</span> Cadastro no SiBI / Minerva
+        </span>
+</div>
+</div>
+<!-- 11. Café com a Decania (Locked) -->
+<div class="badge-card relative flex items-start gap-space-sm p-3.5 rounded-xl bg-surface-container-low opacity-80 hover:opacity-100 transition-all duration-200" data-status="locked">
+<div class="flex items-center justify-center w-14 h-14 rounded-xl bg-surface-dim text-outline shrink-0">
+<span class="material-symbols-outlined text-[28px]">coffee</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface-variant font-bold truncate">Café com a Decania</h3>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full font-label-caps text-label-caps bg-surface-variant text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[13px]">lock</span> Bloqueado
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-outline mt-1 leading-snug">Descobriu a mítica copa do NCE e a decania do CCMN.</p>
+<span class="font-label-caps text-label-caps text-on-surface-variant/70 mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pin_drop</span> Bloco A - Decania CCMN
+        </span>
+</div>
+</div>
+<!-- 12. Sobrevivente do Período 1 (Locked - Legendary) -->
+<div class="badge-card relative flex items-start gap-space-sm p-3.5 rounded-xl bg-surface-container-high opacity-85 hover:opacity-100 transition-all duration-200 shadow-sm" data-status="locked">
+<div class="flex items-center justify-center w-14 h-14 rounded-xl bg-surface-dim text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[28px]">school</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold truncate">Sobrevivente do Período 1</h3>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full font-label-caps text-label-caps bg-surface-variant text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[13px]">lock</span> Mestre
+          </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">Completou 100% das missões e participou da Semana de Integração.</p>
+<span class="font-label-caps text-label-caps text-secondary mt-2 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">workspace_premium</span> Badge Lendário de Conclusão
+        </span>
+</div>
+</div>
+</div>
+<!-- Physical Reward / Resgate Card -->
+<div class="rounded-xl bg-surface-container p-space-md shadow-sm">
+<div class="flex items-start gap-space-sm">
+<div class="flex items-center justify-center w-11 h-11 rounded-full bg-secondary-container text-on-secondary-container shrink-0">
+<span class="material-symbols-outlined text-[24px]">redeem</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-headline-sm text-primary font-bold">Resgate seus Brindes!</h4>
+<span class="font-label-caps text-label-caps text-secondary font-bold uppercase tracking-wider bg-secondary-fixed px-2 py-0.5 rounded-full">Presencial</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 leading-relaxed">
+          Todas as suas conquistas são persistidas localmente no dispositivo (Cookies / LocalStorage). Mostre sua tela na sede do <strong>CAINFO</strong> ou na recepção do <strong>IC</strong> para resgatar adesivos e brindes exclusivos!
+        </p>
+<div class="flex flex-wrap items-center gap-2 mt-3 pt-2">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-secondary text-[16px]">location_on</span> Bloco E - Sala do CAINFO
+          </div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-secondary text-[16px]">devices</span> Sincronizado Offline
+          </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function filterBadges(category) {
+    const cards = document.querySelectorAll('.badge-card');
+    const buttons = document.querySelectorAll('.badge-filter');
+
+    buttons.forEach(btn => {
+      btn.className = 'badge-filter px-3.5 py-1.5 rounded-full font-label-caps text-label-caps bg-surface-container text-on-surface-variant hover:text-primary active:scale-95 transition-all';
+    });
+
+    const activeBtn = document.getElementById('filter-' + category);
+    if (activeBtn) {
+      activeBtn.className = 'badge-filter px-3.5 py-1.5 rounded-full font-label-caps text-label-caps bg-primary text-on-primary shadow-sm active:scale-95 transition-all';
+    }
+
+    cards.forEach(card => {
+      const status = card.getAttribute('data-status');
+      if (category === 'all') {
+        card.style.display = 'flex';
+      } else if (category === 'unlocked' && status === 'unlocked') {
+        card.style.display = 'flex';
+      } else if (category === 'locked' && status === 'locked') {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,43,73,0.06)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-20 px-space-xs"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-all active:scale-95" data-path="missoes" href="#"><span class="material-symbols-outlined text-[24px]">assignment_turned_in</span><span class="font-label-caps text-label-caps">Missões</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 transition-all active:scale-95 text-primary font-bold" data-path="conquistas" href="#"><span class="material-symbols-outlined text-[24px]">trophy</span><span class="font-label-caps text-label-caps">Conquistas</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-all active:scale-95" data-path="mapa-do-fundao" href="#"><span class="material-symbols-outlined text-[24px]">explore</span><span class="font-label-caps text-label-caps">Mapa</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-all active:scale-95" data-path="extensoes-ic" href="#"><span class="material-symbols-outlined text-[24px]">groups</span><span class="font-label-caps text-label-caps">Extensões</span></a></div></nav></body></html>

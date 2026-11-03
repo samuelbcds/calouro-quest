@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-fixed-dim": "#93ccff", "outline-variant": "#c2c7d1", "surface-variant": "#e0e3e5", "surface-dim": "#d8dadc", "surface-tint": "#286198", "on-surface-variant": "#42474f", "primary-fixed": "#d2e4ff", "secondary": "#006398", "surface-container-lowest": "#ffffff", "surface": "#f7f9fb", "surface-bright": "#f7f9fb", "inverse-primary": "#9fcaff", "on-error-container": "#93000a", "secondary-fixed": "#cce5ff", "surface-container-low": "#f2f4f6", "inverse-on-surface": "#eff1f3", "primary": "#00335b", "on-secondary-fixed": "#001d31", "on-tertiary": "#ffffff", "on-primary-fixed": "#001d37", "surface-container-highest": "#e0e3e5", "on-primary-container": "#88baf7", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#653e00", "on-primary": "#ffffff", "inverse-surface": "#2d3133", "on-background": "#191c1e", "secondary-container": "#5bb8fe", "background": "#f7f9fb", "surface-container-high": "#e6e8ea", "error-container": "#ffdad6", "on-secondary-container": "#00476e", "tertiary": "#482b00", "tertiary-container": "#673f00", "primary-fixed-dim": "#9fcaff", "tertiary-fixed": "#ffddb8", "tertiary-fixed-dim": "#ffb95f", "primary-container": "#004a80", "error": "#ba1a1a", "on-secondary-fixed-variant": "#004b73", "on-tertiary-container": "#fca416", "surface-container": "#eceef0", "on-primary-fixed-variant": "#00497e", "on-surface": "#191c1e", "outline": "#727781", "on-secondary": "#ffffff", "on-tertiary-fixed": "#2a1700" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter-mobile": "1rem", "margin": "1.875rem", "space-xs": "0.25rem", "gutter": "1.25rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "space-xl": "2rem", "space-md": "1rem", "space-lg": "1.5rem" }, fontFamily: { "headline-lg": ["Montserrat"], "headline-sm": ["Montserrat"], "headline-lg-mobile": ["Montserrat"], "code-snippet": ["JetBrains Mono"], "label-caps": ["Montserrat"], "display-lg": ["Montserrat"], "body-bold": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Montserrat"], "display-lg-mobile": ["Montserrat"], "body-base": ["Inter"] }, fontSize: { "headline-lg": ["26px", { lineHeight: "34px", letterSpacing: "-0.01em", fontWeight: "700" }], "headline-sm": ["17px", { lineHeight: "24px", fontWeight: "600" }], "headline-lg-mobile": ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "700" }], "code-snippet": ["14px", { lineHeight: "20px", fontWeight: "400" }], "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.06em", fontWeight: "700" }], "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "800" }], "body-bold": ["16px", { lineHeight: "26px", fontWeight: "600" }], "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }], "display-lg-mobile": ["26px", { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "800" }], "body-base": ["16px", { lineHeight: "26px", fontWeight: "400" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-base text-body-base text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="IC UFRJ Calouros Logo" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1W_IuotRg3PNakEcyNDEzPOzGWJDoptbuQxDQbztDfasGIwgZiEBckhJX-ynl1hs5BAJWqjhrJtWft-pXlwgvHW7nDb0vVHV4pV-TbOJ8jdZOEsE1hyzYzFoVmP03ego6G_r-7yODx32PYW8rcPNCtTLeXhCpZY4CGrUz1lTCN1g1UEJNT5B8vxwruIN_Ugmj2ClOS5GvNHf4gn8J6K8fJkiTJVXgbs3pN9ybAxqqlS8SekOe2IbMySBPUF"/><div class="flex flex-col min-w-0"><span class="font-label-caps text-label-caps text-secondary uppercase truncate leading-none">IC · UFRJ</span><span class="font-headline-sm text-headline-sm text-primary font-bold truncate leading-tight">Mapa Do Fundão</span></div></div><div class="flex items-center gap-space-xs shrink-0"><div class="flex items-center gap-1 bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-1 rounded-full shadow-[0_2px_8px_rgba(245,158,11,0.2)]"><span class="material-symbols-outlined text-tertiary text-[18px]">military_tech</span><span class="font-label-caps text-label-caps text-tertiary font-bold">NV. 1</span></div><button aria-label="Configurações de som e progresso" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors active:scale-95"><span class="material-symbols-outlined text-[22px]">volume_up</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full pb-10">
+<!-- Search & Tactical Quick Filters Bar -->
+<div class="px-gutter-mobile pt-space-sm pb-space-sm flex flex-col gap-space-sm">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline-variant text-[20px] pointer-events-none">search</span>
+<input class="w-full h-11 pl-11 pr-10 bg-surface-container rounded-xl text-on-surface font-body-base text-body-sm placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-sm transition-all" id="search-input" placeholder="Buscar prédio, laboratório ou bandejão..." type="search"/>
+<button class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary p-1" id="clear-search">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Category Filters Scroll Tray -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1 -mx-gutter-mobile px-gutter-mobile">
+<button class="filter-chip active shrink-0 px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-caps text-label-caps uppercase transition-all shadow-sm flex items-center gap-1.5" data-filter="all">
+<span class="material-symbols-outlined text-[16px]">travel_explore</span>
+<span>Todos</span>
+</button>
+<button class="filter-chip shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-caps text-label-caps uppercase transition-all hover:bg-surface-container-high flex items-center gap-1.5" data-filter="ccmn">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+<span>CCMN &amp; IC</span>
+</button>
+<button class="filter-chip shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-caps text-label-caps uppercase transition-all hover:bg-surface-container-high flex items-center gap-1.5" data-filter="nce">
+<span class="material-symbols-outlined text-[16px]">memory</span>
+<span>NCE</span>
+</button>
+<button class="filter-chip shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-caps text-label-caps uppercase transition-all hover:bg-surface-container-high flex items-center gap-1.5" data-filter="ct">
+<span class="material-symbols-outlined text-[16px]">domain</span>
+<span>CT &amp; Letras</span>
+</button>
+<button class="filter-chip shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-caps text-label-caps uppercase transition-all hover:bg-surface-container-high flex items-center gap-1.5" data-filter="restaurantes">
+<span class="material-symbols-outlined text-[16px]">restaurant</span>
+<span>Bandejão &amp; Cobal</span>
+</button>
+<button class="filter-chip shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-caps text-label-caps uppercase transition-all hover:bg-surface-container-high flex items-center gap-1.5" data-filter="transporte">
+<span class="material-symbols-outlined text-[16px]">directions_bus</span>
+<span>Circulares</span>
+</button>
+</div>
+</div>
+<!-- Interactive Stylized Micro-Map Canvas -->
+<div class="px-gutter-mobile pt-space-xs pb-space-sm">
+<div class="relative w-full bg-primary rounded-xl overflow-hidden shadow-md text-on-primary">
+<!-- Ambient Nautical Pattern Background -->
+<div class="absolute inset-0 opacity-15 pointer-events-none">
+<svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="28" id="grid-pattern" patternunits="userSpaceOnUse" width="28">
+<path d="M 28 0 L 0 0 0 28" fill="none" stroke="currentColor" stroke-width="0.75"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid-pattern)" height="100%" width="100%"></rect>
+</svg>
+</div>
+<!-- Map Waterline and Islands Decoration -->
+<div class="absolute -right-12 -bottom-12 w-48 h-48 rounded-full bg-secondary opacity-30 blur-2xl pointer-events-none"></div>
+<!-- Header inside Micro-Map -->
+<div class="relative z-10 p-space-md flex items-center justify-between pb-2">
+<div class="flex items-center gap-2">
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim animate-ping"></div>
+<span class="font-label-caps text-label-caps tracking-widest text-primary-fixed uppercase font-bold">Radar da Ilha do Fundão</span>
+</div>
+<div class="flex items-center gap-1 bg-primary-container px-2.5 py-1 rounded-full text-secondary-fixed">
+<span class="material-symbols-outlined text-[14px]">stars</span>
+<span class="font-label-caps text-label-caps">Progresso: 4/9 explorados</span>
+</div>
+</div>
+<!-- Visual Campus Schematic Board with Pins -->
+<div class="relative z-10 h-60 w-full px-space-md pb-space-md flex flex-col justify-between">
+<!-- SVG Roads & Schematic Link Lines -->
+<svg class="absolute inset-0 w-full h-full pointer-events-none opacity-40 px-space-md py-space-md" fill="none" stroke="currentColor" viewbox="0 0 340 200">
+<!-- Circular Track Line -->
+<path d="M 30,170 C 80,120 150,140 180,90 S 260,60 310,40" stroke="#93ccff" stroke-dasharray="4 4" stroke-width="2.5"></path>
+<!-- Direct CCMN to Bandejão branch -->
+<path d="M 60,95 L 140,55" stroke="#ffddb8" stroke-width="1.5"></path>
+<!-- CCMN to CT branch -->
+<path d="M 60,95 L 230,135" stroke="#93ccff" stroke-width="1.5"></path>
+</svg>
+<!-- Dynamic Pins Layout inside Radar -->
+<div class="relative w-full h-full">
+<!-- Pin: CCMN (Home Base) -->
+<button class="absolute left-6 top-16 -translate-x-1/2 -translate-y-1/2 group flex flex-col items-center focus:outline-none" onclick="scrollToCard('sec-ccmn')">
+<span class="w-8 h-8 rounded-full bg-surface-container-lowest text-primary shadow-lg flex items-center justify-center border-2 border-primary-container group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+</span>
+<span class="mt-1 px-1.5 py-0.5 rounded bg-surface/90 text-primary font-label-caps text-[10px] whitespace-nowrap shadow-sm font-bold">CCMN / IC</span>
+</button>
+<!-- Pin: NCE -->
+<button class="absolute left-24 top-6 -translate-x-1/2 -translate-y-1/2 group flex flex-col items-center focus:outline-none" onclick="scrollToCard('sec-nce')">
+<span class="w-7 h-7 rounded-full bg-secondary-fixed-dim text-on-secondary-container shadow-md flex items-center justify-center group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[16px]">memory</span>
+</span>
+<span class="mt-1 px-1.5 py-0.5 rounded bg-primary-container text-primary-fixed font-label-caps text-[9px] whitespace-nowrap shadow-sm">NCE</span>
+</button>
+<!-- Pin: Bandejão Central -->
+<button class="absolute left-40 top-14 -translate-x-1/2 -translate-y-1/2 group flex flex-col items-center focus:outline-none" onclick="scrollToCard('sec-restaurantes')">
+<span class="w-8 h-8 rounded-full bg-tertiary-fixed text-on-tertiary-fixed shadow-md flex items-center justify-center group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">restaurant</span>
+</span>
+<span class="mt-1 px-1.5 py-0.5 rounded bg-tertiary-container text-on-tertiary-container font-label-caps text-[10px] whitespace-nowrap shadow-sm">Bandejão</span>
+</button>
+<!-- Pin: CT & Letras -->
+<button class="absolute right-14 top-24 -translate-x-1/2 -translate-y-1/2 group flex flex-col items-center focus:outline-none" onclick="scrollToCard('sec-ct')">
+<span class="w-7 h-7 rounded-full bg-surface-container-high text-primary shadow-md flex items-center justify-center group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[16px]">domain</span>
+</span>
+<span class="mt-1 px-1.5 py-0.5 rounded bg-surface/90 text-primary font-label-caps text-[9px] whitespace-nowrap shadow-sm">CT / Bloco A-H</span>
+</button>
+<!-- Pin: CCS -->
+<button class="absolute right-4 bottom-8 -translate-x-1/2 -translate-y-1/2 group flex flex-col items-center focus:outline-none" onclick="scrollToCard('sec-ccs')">
+<span class="w-7 h-7 rounded-full bg-surface-container-high text-primary shadow-md flex items-center justify-center group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[16px]">medication</span>
+</span>
+<span class="mt-1 px-1.5 py-0.5 rounded bg-surface/90 text-primary font-label-caps text-[9px] whitespace-nowrap shadow-sm">CCS Subsolo</span>
+</button>
+<!-- Pin: Circular / Cobal -->
+<button class="absolute left-8 bottom-3 -translate-x-1/2 -translate-y-1/2 group flex flex-col items-center focus:outline-none" onclick="scrollToCard('sec-transporte')">
+<span class="w-7 h-7 rounded-full bg-secondary text-on-secondary shadow-md flex items-center justify-center group-active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[16px]">directions_bus</span>
+</span>
+<span class="mt-1 px-1.5 py-0.5 rounded bg-primary-container text-secondary-fixed font-label-caps text-[9px] whitespace-nowrap shadow-sm">Circulares</span>
+</button>
+</div>
+<!-- Radar Bottom Status Helper -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1.5 text-secondary-fixed">
+<span class="material-symbols-outlined text-[16px]">touch_app</span>
+<span class="font-body-sm text-[12px]">Toque nos ícones para navegar</span>
+</div>
+<span class="font-code-snippet text-[11px] text-primary-fixed opacity-75">GPS: -22.8601, -43.2323</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Real-World Discovery Feed -->
+<div class="flex flex-col gap-space-md px-gutter-mobile mt-space-xs" id="poi-container">
+<!-- ==================== 1. CCMN & INSTITUTO DE COMPUTAÇÃO ==================== -->
+<div class="poi-section flex flex-col gap-space-sm scroll-mt-20" data-category="ccmn" id="sec-ccmn">
+<!-- Section Title Badge -->
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">CCMN &amp; IC (Sua Casa)</h2>
+</div>
+<span class="font-label-caps text-[11px] text-secondary font-bold uppercase tracking-wider">Centro de Ciências</span>
+</div>
+<!-- CARD 1.1: LAB 1 e LAB 3 -->
+<article class="poi-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all hover:shadow-md flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Laboratórios (LAB 1 &amp; LAB 3)</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Bloco E · 2º Andar · Onde você compila em C e Python</p>
+</div>
+<!-- Quest Badge Completed -->
+<div class="shrink-0 flex items-center gap-1 bg-surface-container-high text-primary px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span class="font-label-caps text-[11px] font-bold">Concluído</span>
+</div>
+</div>
+<div class="w-full h-32 rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Modern undergraduate computer science laboratory with Linux terminals, dual monitors, students programming in C, clean fluorescent lighting in university building with ocean blue wall accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD62aAviwhHxm5dHDQgIiMksDWfdtbUbvc8n_9tS-eQBVjB07Joz1tKMomwBcovw3JUzFp7oinJ4LlFA99AiggIfKcaYqL2QLLTFYXnXj0laURGGplp5Jlg8cnd3o6LKrcUu2J4BKNrz_PwCb8u4Apgl9JFmPbRwud-3y4P3FOqIetDljd5yTC4zT0_esmh0yoKBBED11Xn_VkoIj5S1GjUdwvPBfkbIfjMs6-2tkBRpOwAxpW3wcM2_Q"/>
+<div class="absolute bottom-2 left-2 bg-surface/90 px-2 py-0.5 rounded text-primary font-code-snippet text-[11px]">
+            Dual-Boot Linux Ubuntu &amp; Windows
+          </div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3 flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 text-primary font-label-caps text-label-caps font-bold">
+<span class="material-symbols-outlined text-[16px]">navigation</span>
+<span>Como chegar a partir da entrada do CCMN:</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Entrando pela portaria principal do CCMN, suba a rampa central até o 2º pavimento. Vire à esquerda no corredor do Bloco E; as portas do LAB 1 e LAB 3 estarão sinalizadas à sua direita.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-caps text-[11px] text-outline font-bold">ACESSO LIVRE COM CARTEIRINHA</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-caps text-label-caps font-bold hover:bg-secondary-fixed transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span>Horários de Monitoria</span>
+</button>
+</div>
+</article>
+<!-- CARD 1.2: Museu da Computação -->
+<article class="poi-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all hover:shadow-md flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Museu da Computação</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Corredor do IC · Memória viva da informática brasileira</p>
+</div>
+<!-- Quest Badge Pending -->
+<div class="shrink-0 flex items-center gap-1 bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-1 rounded-full shadow-[0_2px_8px_rgba(245,158,11,0.2)]">
+<span class="material-symbols-outlined text-[16px] text-tertiary">military_tech</span>
+<span class="font-label-caps text-[11px] font-bold">+80 XP</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+          Abriga placas perfuradas, memórias magnéticas vintage dos anos 70, componentes do primeiro supercomputador da universidade e terminais históricos de teleprocessamento.
+        </p>
+<div class="bg-surface-container-low rounded-lg p-3 flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 text-primary font-label-caps text-label-caps font-bold">
+<span class="material-symbols-outlined text-[16px]">directions_walk</span>
+<span>Instruções de acesso:</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Localizado no hall de vidro anexo à secretaria do IC, entre as salas dos professores e o auditório do Bloco F.
+          </p>
+</div>
+<button class="w-full h-10 rounded-lg bg-primary text-on-primary font-label-caps text-label-caps uppercase font-bold flex items-center justify-center gap-1.5 shadow-sm active:scale-98 transition-transform">
+<span class="material-symbols-outlined text-[18px]">qr_code_scanner</span>
+<span>Escanear QR Code no Local</span>
+</button>
+</article>
+<!-- CARD 1.3: Museu da Geodiversidade & Biblioteca CCMN -->
+<article class="poi-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all hover:shadow-md flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Museu da Geodiversidade &amp; CAINFO</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Térreo do CCMN e Bloco de Integração Acadêmica</p>
+</div>
+<div class="shrink-0 flex items-center gap-1 bg-surface-container-high text-primary px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span class="font-label-caps text-[11px] font-bold">Concluído</span>
+</div>
+</div>
+<div class="w-full h-32 rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Fascinating natural history and geology university museum interior with fossil exhibits, minerals, dim atmospheric exhibition lights next to collegiate architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ_P8hDmjPkC6bgLNroDAjGrlzAuPq-pda9HMcg6IXAdXhs0X1k0PkK9T3bijlgD94sOPIrCBZ9SAoPGDVJVayC-qkslYsRPYY0cX3JfMwlSgaZnswu4l3vk3rz262h_3SBwvbgGflNQrmeQzEJeXBkwusBwos2cnGpIXcuMnUCwzUDh85XvuX5ju2RzB7fcdJtASoHJUuvl2avDuZWovtBunbqEPn7M9P6GLr-TuuOR_bsZj2ghpxCw"/>
+<div class="absolute bottom-2 left-2 bg-surface/90 px-2 py-0.5 rounded text-primary font-label-caps text-[11px] font-bold">
+            Espaço Cultural &amp; Fósseis Raros
+          </div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Excelente espaço para descompressão entre aulas de Álgebra e Cálculo. O <strong>CAINFO</strong> (Centro Acadêmico de Informática) fica no mesmo piso com sofás, micro-ondas e veteranos prontos para tirar dúvidas.
+        </p>
+<div class="bg-surface-container-low rounded-lg p-3 flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 text-primary font-label-caps text-label-caps font-bold">
+<span class="material-symbols-outlined text-[16px]">navigation</span>
+<span>Como chegar:</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Ao entrar na portaria do CCMN pelo pátio dos ônibus, vire imediatamente à direita para acessar o Museu. Para a Biblioteca Central e CAINFO, siga reto pelo corredor plano até o jardim de inverno.
+          </p>
+</div>
+</article>
+</div>
+<!-- ==================== 2. NCE ==================== -->
+<div class="poi-section flex flex-col gap-space-sm scroll-mt-20" data-category="nce" id="sec-nce">
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-secondary text-on-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">memory</span>
+</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">NCE (Núcleo de Computação)</h2>
+</div>
+<span class="font-label-caps text-[11px] text-secondary font-bold uppercase tracking-wider">Prédio Anexo</span>
+</div>
+<article class="poi-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all hover:shadow-md flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Copa do NCE &amp; Biblioteca Especializada</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Ponto crucial para pesquisadores e café fresco</p>
+</div>
+<div class="shrink-0 flex items-center gap-1 bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-1 rounded-full shadow-[0_2px_8px_rgba(245,158,11,0.2)]">
+<span class="material-symbols-outlined text-[16px] text-tertiary">military_tech</span>
+<span class="font-label-caps text-[11px] font-bold">+100 XP</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 text-center">
+<div class="bg-surface-container-low rounded-lg p-2.5 flex flex-col items-center">
+<span class="material-symbols-outlined text-secondary text-[20px]">local_cafe</span>
+<span class="font-headline-sm text-[13px] font-bold text-primary mt-1">Copa &amp; Convivência</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Café quente &amp; tomadas</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2.5 flex flex-col items-center">
+<span class="material-symbols-outlined text-secondary text-[20px]">menu_book</span>
+<span class="font-headline-sm text-[13px] font-bold text-primary mt-1">Acervo NCE</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Livros clássicos de algoritmos</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3 flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 text-primary font-label-caps text-label-caps font-bold">
+<span class="material-symbols-outlined text-[16px]">navigation</span>
+<span>Instruções a pé (2 min a partir do CCMN):</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Saia pelos fundos do Bloco F do CCMN ou pela passarela arborizada lateral. O NCE é o edifício de fachada escura com janelas espelhadas imediatamente adjacente.
+          </p>
+</div>
+<button class="w-full h-10 rounded-lg bg-surface-container text-primary font-label-caps text-label-caps uppercase font-bold flex items-center justify-center gap-1.5 hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-[18px]">place</span>
+<span>Marcar Visita com Veterano</span>
+</button>
+</article>
+</div>
+<!-- ==================== 3. RESTAURANTES & BANDEJÃO ==================== -->
+<div class="poi-section flex flex-col gap-space-sm scroll-mt-20" data-category="restaurantes" id="sec-restaurantes">
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-tertiary-container text-on-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">restaurant</span>
+</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Bandejão Central &amp; Alimentação</h2>
+</div>
+<span class="font-label-caps text-[11px] text-tertiary font-bold uppercase tracking-wider">R$ 2,00 / Refeição</span>
+</div>
+<article class="poi-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all hover:shadow-md flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Restaurante Universitário (RU Central)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Almoço das 11:30 às 14:00 · Jantar das 17:30 às 20:00</p>
+</div>
+<div class="shrink-0 flex items-center gap-1 bg-surface-container-high text-primary px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span class="font-label-caps text-[11px] font-bold">Concluído</span>
+</div>
+</div>
+<div class="w-full h-32 rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Bustling university dining hall with students lined up, metal trays with Brazilian nutritious food, rice, beans, chicken, energetic college atmosphere on campus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl2pgS9VbjgZ9gTo_Fz_R3titHkbPQhE7tDmyBG3pKFUviA_yqlW2jF2JVHMTYz6lbdtPNC3SoqfQNwfU44BZUd8A5KHCyckU0r_u2fSpDkWse7L-TgRv2Kaq9pxzV_CxqM2kMNRDo0YWPGC4OUpdS2j-jGL54FRjGaCsOGrIt8cEmjaPodOys_jmGMfSeT5yrlj1z7EZhkZDsCkSLDbLsGenoRX0RrD5ewUUR1NMBD0yW3e-ZruR0HQ"/>
+<div class="absolute bottom-2 left-2 bg-surface/90 px-2 py-0.5 rounded text-tertiary font-label-caps text-[11px] font-bold">
+            Cardápio Nutricional &amp; Opção Vegana
+          </div>
+</div>
+<!-- Practical Survival Guide Bento Inside Card -->
+<div class="grid grid-cols-1 gap-2">
+<div class="bg-surface-container-low rounded-lg p-2.5 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-tertiary text-[20px] shrink-0 mt-0.5">badge</span>
+<div>
+<span class="font-headline-sm text-[13px] font-bold text-primary block">Tíquetes e Carteirinha</span>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Carregue saldo no app do RU com antecedência ou compre o tíquete avulso na guichê (aceita Pix e dinheiro trocado).</p>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2.5 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-error text-[20px] shrink-0 mt-0.5">schedule</span>
+<div>
+<span class="font-headline-sm text-[13px] font-bold text-primary block">Horário de Pico</span>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Pico crítico: 12:15 às 13:00. Vá às 11:40 (logo após a aula matutina) para fila zero.</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3 flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 text-primary font-label-caps text-label-caps font-bold">
+<span class="material-symbols-outlined text-[16px]">navigation</span>
+<span>Como chegar a pé do CCMN (5 min):</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Saia pela portaria principal do CCMN, atravesse a passarela sobre o gramado e siga a calçada arborizada em direção à lagoa. O prédio arredondado do RU fica logo à frente.
+          </p>
+</div>
+</article>
+<!-- COBAL & Trailers alternativos -->
+<article class="poi-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all hover:shadow-md flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Praça de Convivência &amp; Trailers (COBAL)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Salgados, açaí, café com leite e rodas de conversa</p>
+</div>
+<div class="shrink-0 flex items-center gap-1 bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-1 rounded-full shadow-[0_2px_8px_rgba(245,158,11,0.2)]">
+<span class="material-symbols-outlined text-[16px] text-tertiary">military_tech</span>
+<span class="font-label-caps text-[11px] font-bold">+50 XP</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+          Excelente alternativa rápida para intervalos de 15 minutos entre turnos de aula. Ótimo ponto para encontrar grupos de estudos de Cálculo I.
+        </p>
+<div class="bg-surface-container-low rounded-lg p-3 flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 text-primary font-label-caps text-label-caps font-bold">
+<span class="material-symbols-outlined text-[16px]">directions_walk</span>
+<span>Instruções de acesso:</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Fica entre o CCMN e a Faculdade de Letras, logo ao lado do ponto de ônibus interno.
+          </p>
+</div>
+</article>
+</div>
+<!-- ==================== 4. CENTRO DE TECNOLOGIA (CT) & LETRAS ==================== -->
+<div class="poi-section flex flex-col gap-space-sm scroll-mt-20" data-category="ct" id="sec-ct">
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">domain</span>
+</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Centro de Tecnologia (CT) &amp; Letras</h2>
+</div>
+<span class="font-label-caps text-[11px] text-secondary font-bold uppercase tracking-wider">Engenharias &amp; Humanidades</span>
+</div>
+<article class="poi-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all hover:shadow-md flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Blocos A, C, H &amp; Decania do CT</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Onde ocorrem algumas disciplinas complementares</p>
+</div>
+<div class="shrink-0 flex items-center gap-1 bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-1 rounded-full shadow-[0_2px_8px_rgba(245,158,11,0.2)]">
+<span class="material-symbols-outlined text-[16px] text-tertiary">military_tech</span>
+<span class="font-label-caps text-[11px] font-bold">+90 XP</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface">
+          O CT é um gigantesco complexo com diversos laboratórios de robótica, empresas juniores e hackathons. O <strong>Bloco H</strong> abriga os anfiteatros das aulas magnas integradas.
+        </p>
+<div class="bg-surface-container-low rounded-lg p-3 flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 text-primary font-label-caps text-label-caps font-bold">
+<span class="material-symbols-outlined text-[16px]">navigation</span>
+<span>Como chegar a partir do CCMN:</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Pegue o <strong>Ônibus Circular 1 ou 4</strong> no ponto em frente ao CCMN (3 minutos de viagem) ou faça uma caminhada de 12 minutos cruzando a alameda central em frente ao Restaurante Universitário.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-caps text-[11px] text-outline font-bold">CONEXÃO COM GRUPOS DE EXTENSÃO</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-primary font-label-caps text-label-caps font-bold hover:bg-secondary-fixed transition-colors">
+            Ver Salas do Bloco H
+          </button>
+</div>
+</article>
+<article class="poi-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all hover:shadow-md flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Faculdade de Letras</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Livraria, feiras culturais e jardins de estudo serenos</p>
+</div>
+<div class="shrink-0 flex items-center gap-1 bg-surface-container-high text-primary px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span class="font-label-caps text-[11px] font-bold">Concluído</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Excelente local vizinho ao CCMN para comprar livros acadêmicos com desconto, ler ao ar livre e recarregar energias longe das telas.
+        </p>
+<div class="bg-surface-container-low rounded-lg p-3 flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 text-primary font-label-caps text-label-caps font-bold">
+<span class="material-symbols-outlined text-[16px]">directions_walk</span>
+<span>Instruções a pé (3 min):</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Saindo do CCMN em direção à Baía, basta atravessar a alameda lateral arborizada; Letras é o prédio adjacente com pilotis e pátio sombreado.
+          </p>
+</div>
+</article>
+</div>
+<!-- ==================== 5. CCS ==================== -->
+<div class="poi-section flex flex-col gap-space-sm scroll-mt-20" data-category="ccs" id="sec-ccs">
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">medication</span>
+</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">CCS (Centro de Ciências da Saúde)</h2>
+</div>
+<span class="font-label-caps text-[11px] text-secondary font-bold uppercase tracking-wider">O Labirinto</span>
+</div>
+<article class="poi-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all hover:shadow-md flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">O Famoso Subsolo Labiríntico do CCS</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Praça de serviços, bancos, farmácias e lanchonetes</p>
+</div>
+<div class="shrink-0 flex items-center gap-1 bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-1 rounded-full shadow-[0_2px_8px_rgba(245,158,11,0.2)]">
+<span class="material-symbols-outlined text-[16px] text-tertiary">military_tech</span>
+<span class="font-label-caps text-[11px] font-bold">+120 XP</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3 flex flex-col gap-2">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-[18px]">explore</span>
+<span class="font-headline-sm text-[13px] font-bold">Dica de Sobrevivência de Calouro:</span>
+</div>
+<p class="font-body-sm text-[13px] text-on-surface-variant">
+            O subsolo do CCS é um dos maiores corredores subterrâneos universitários da América Latina. Se você se perder, procure sempre as placas dos <strong>Blocos A ao K</strong> ou suba qualquer escada para o pátio ajardinado no térreo.
+          </p>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3 flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 text-primary font-label-caps text-label-caps font-bold">
+<span class="material-symbols-outlined text-[16px]">directions_bus</span>
+<span>Como chegar a partir do CCMN:</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Tome qualquer <strong>Circular Gratuito (Linhas 1, 2 ou 3)</strong> no ponto do CCMN. O trajeto até a portaria central do CCS leva aproximadamente 6 minutos. Desça as escadas rolantes centrais para o subsolo.
+          </p>
+</div>
+<button class="w-full h-10 rounded-lg bg-surface-container text-primary font-label-caps text-label-caps uppercase font-bold flex items-center justify-center gap-1.5 hover:bg-secondary-fixed transition-colors">
+<span class="material-symbols-outlined text-[18px]">map</span>
+<span>Ver Mapa Esquemático do Subsolo</span>
+</button>
+</article>
+</div>
+<!-- ==================== 6. ÔNIBUS CIRCULARES ==================== -->
+<div class="poi-section flex flex-col gap-space-sm scroll-mt-20" data-category="transporte" id="sec-transporte">
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<span class="w-7 h-7 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">directions_bus</span>
+</span>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Ônibus Circular Interno</h2>
+</div>
+<span class="font-label-caps text-[11px] text-secondary font-bold uppercase tracking-wider">100% Gratuito</span>
+</div>
+<article class="poi-card bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all hover:shadow-md flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-primary font-bold">Rotas e Frequência das Linhas Internas</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Sem cobrança de tarifa · Embarque com a mão erguida</p>
+</div>
+<div class="shrink-0 flex items-center gap-1 bg-surface-container-high text-primary px-2.5 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span class="font-label-caps text-[11px] font-bold">Concluído</span>
+</div>
+</div>
+<!-- Bus Lines List -->
+<div class="flex flex-col gap-2">
+<div class="bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-7 h-7 rounded bg-primary text-on-primary font-headline-sm text-[13px] flex items-center justify-center font-bold">01</span>
+<div>
+<span class="font-headline-sm text-[13px] font-bold text-primary block">Circular Rota 1 (Interno)</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">CCMN ➔ Letras ➔ CT ➔ Alojamento ➔ CCS</span>
+</div>
+</div>
+<span class="font-label-caps text-[11px] font-bold text-secondary">10 em 10 min</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-2.5 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-7 h-7 rounded bg-secondary text-on-secondary font-headline-sm text-[13px] flex items-center justify-center font-bold">04</span>
+<div>
+<span class="font-headline-sm text-[13px] font-bold text-primary block">Circular Linha Vermelha / Integração</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant">Conexão Terminal Fundão BRT ➔ CCMN</span>
+</div>
+</div>
+<span class="font-label-caps text-[11px] font-bold text-secondary">15 em 15 min</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3 flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 text-primary font-label-caps text-label-caps font-bold">
+<span class="material-symbols-outlined text-[16px]">pin_drop</span>
+<span>Ponto principal em frente ao IC:</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Fica na marquise coberta da rua principal, a apenas 40 passos da saída de vidro do CCMN.
+          </p>
+</div>
+</article>
+</div>
+<!-- Empty State for filtered queries (hidden by default) -->
+<div class="hidden flex-col items-center justify-center py-12 px-6 text-center" id="empty-state">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center text-outline mb-3">
+<span class="material-symbols-outlined text-[32px]">map_search</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-primary font-bold">Nenhum ponto encontrado</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-xs">
+        Tente pesquisar por palavras como "LAB", "Almoço", "Letras" ou escolha outro filtro acima.
+      </p>
+<button class="mt-4 px-4 py-2 rounded-lg bg-primary text-on-primary font-label-caps text-label-caps uppercase font-bold shadow-sm" onclick="resetFilters()">
+        Limpar Busca e Filtros
+      </button>
+</div>
+</div>
+</div>
+<script>
+  // Dynamic Scroll to Anchor helper
+  function scrollToCard(cardId) {
+    const el = document.getElementById(cardId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Visual feedback highlight
+      el.classList.add('scale-[1.01]');
+      setTimeout(() => el.classList.remove('scale-[1.01]'), 350);
+    }
+  }
+
+  // Filter Chips and Search Logic
+  const filterChips = document.querySelectorAll('.filter-chip');
+  const poiSections = document.querySelectorAll('.poi-section');
+  const searchInput = document.getElementById('search-input');
+  const clearBtn = document.getElementById('clear-search');
+  const emptyState = document.getElementById('empty-state');
+
+  let currentCategory = 'all';
+
+  function applyFilters() {
+    const query = searchInput.value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    poiSections.forEach(section => {
+      const category = section.getAttribute('data-category');
+      const matchesCategory = (currentCategory === 'all' || currentCategory === category);
+      
+      const cards = section.querySelectorAll('.poi-card');
+      let visibleCardsInSection = 0;
+
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const matchesQuery = query === '' || text.includes(query);
+
+        if (matchesCategory && matchesQuery) {
+          card.classList.remove('hidden');
+          visibleCardsInSection++;
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (visibleCardsInSection > 0) {
+        section.classList.remove('hidden');
+      } else {
+        section.classList.add('hidden');
+      }
+    });
+
+    if (visibleCount === 0) {
+      emptyState.classList.remove('hidden');
+      emptyState.classList.add('flex');
+    } else {
+      emptyState.classList.add('hidden');
+      emptyState.classList.remove('flex');
+    }
+
+    if (query.length > 0) {
+      clearBtn.classList.remove('hidden');
+    } else {
+      clearBtn.classList.add('hidden');
+    }
+  }
+
+  filterChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      filterChips.forEach(c => {
+        c.classList.remove('bg-primary', 'text-on-primary');
+        c.classList.add('bg-surface-container', 'text-on-surface-variant');
+      });
+      chip.classList.add('bg-primary', 'text-on-primary');
+      chip.classList.remove('bg-surface-container', 'text-on-surface-variant');
+
+      currentCategory = chip.getAttribute('data-filter');
+      applyFilters();
+    });
+  });
+
+  searchInput.addEventListener('input', applyFilters);
+
+  clearBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    applyFilters();
+    searchInput.focus();
+  });
+
+  function resetFilters() {
+    searchInput.value = '';
+    currentCategory = 'all';
+    filterChips.forEach(c => {
+      if (c.getAttribute('data-filter') === 'all') {
+        c.classList.add('bg-primary', 'text-on-primary');
+        c.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      } else {
+        c.classList.remove('bg-primary', 'text-on-primary');
+        c.classList.add('bg-surface-container', 'text-on-surface-variant');
+      }
+    });
+    applyFilters();
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,43,73,0.06)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-20 px-space-xs"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-all active:scale-95" data-path="missoes" href="#"><span class="material-symbols-outlined text-[24px]">assignment_turned_in</span><span class="font-label-caps text-label-caps">Missões</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-all active:scale-95" data-path="conquistas" href="#"><span class="material-symbols-outlined text-[24px]">trophy</span><span class="font-label-caps text-label-caps">Conquistas</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-all active:scale-95" data-path="mapa-do-fundao" href="#"><span class="material-symbols-outlined text-[24px]">explore</span><span class="font-label-caps text-label-caps">Mapa</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-all active:scale-95" data-path="extensoes-ic" href="#"><span class="material-symbols-outlined text-[24px]">groups</span><span class="font-label-caps text-label-caps">Extensões</span></a></div></nav></body></html>

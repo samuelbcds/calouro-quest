@@ -1,0 +1,103 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'secondary-fixed-dim': '#93ccff',
+        'outline-variant': '#c2c7d1',
+        'surface-variant': '#e0e3e5',
+        'surface-dim': '#d8dadc',
+        'surface-tint': '#286198',
+        'on-surface-variant': '#42474f',
+        'primary-fixed': '#d2e4ff',
+        'secondary': '#006398',
+        'surface-container-lowest': '#ffffff',
+        'surface': '#f7f9fb',
+        'surface-bright': '#f7f9fb',
+        'inverse-primary': '#9fcaff',
+        'on-error-container': '#93000a',
+        'secondary-fixed': '#cce5ff',
+        'surface-container-low': '#f2f4f6',
+        'inverse-on-surface': '#eff1f3',
+        'primary': '#00335b',
+        'on-secondary-fixed': '#001d31',
+        'on-tertiary': '#ffffff',
+        'on-primary-fixed': '#001d37',
+        'surface-container-highest': '#e0e3e5',
+        'on-primary-container': '#88baf7',
+        'on-error': '#ffffff',
+        'on-tertiary-fixed-variant': '#653e00',
+        'on-primary': '#ffffff',
+        'inverse-surface': '#2d3133',
+        'on-background': '#191c1e',
+        'secondary-container': '#5bb8fe',
+        'background': '#f7f9fb',
+        'surface-container-high': '#e6e8ea',
+        'error-container': '#ffdad6',
+        'on-secondary-container': '#00476e',
+        'tertiary': '#482b00',
+        'tertiary-container': '#673f00',
+        'primary-fixed-dim': '#9fcaff',
+        'tertiary-fixed': '#ffddb8',
+        'tertiary-fixed-dim': '#ffb95f',
+        'primary-container': '#004a80',
+        'error': '#ba1a1a',
+        'on-secondary-fixed-variant': '#004b73',
+        'on-tertiary-container': '#fca416',
+        'surface-container': '#eceef0',
+        'on-primary-fixed-variant': '#00497e',
+        'on-surface': '#191c1e',
+        'outline': '#727781',
+        'on-secondary': '#ffffff',
+        'on-tertiary-fixed': '#2a1700'
+      },
+      borderRadius: {
+        'DEFAULT': '0.25rem',
+        'lg': '0.5rem',
+        'xl': '0.75rem',
+        'full': '9999px'
+      },
+      spacing: {
+        'gutter-mobile': '1rem',
+        'margin': '1.875rem',
+        'space-xs': '0.25rem',
+        'gutter': '1.25rem',
+        'space-sm': '0.5rem',
+        'margin-mobile': '1rem',
+        'space-xl': '2rem',
+        'space-md': '1rem',
+        'space-lg': '1.5rem'
+      },
+      fontFamily: {
+        'headline-lg': ['Montserrat', 'sans-serif'],
+        'headline-sm': ['Montserrat', 'sans-serif'],
+        'headline-lg-mobile': ['Montserrat', 'sans-serif'],
+        'code-snippet': ['JetBrains Mono', 'monospace'],
+        'label-caps': ['Montserrat', 'sans-serif'],
+        'display-lg': ['Montserrat', 'sans-serif'],
+        'body-bold': ['Inter', 'sans-serif'],
+        'body-sm': ['Inter', 'sans-serif'],
+        'headline-md': ['Montserrat', 'sans-serif'],
+        'display-lg-mobile': ['Montserrat', 'sans-serif'],
+        'body-base': ['Inter', 'sans-serif']
+      },
+      fontSize: {
+        'headline-lg': ['26px', { lineHeight: '34px', letterSpacing: '-0.01em', fontWeight: '700' }],
+        'headline-sm': ['17px', { lineHeight: '24px', fontWeight: '600' }],
+        'headline-lg-mobile': ['22px', { lineHeight: '28px', letterSpacing: '-0.01em', fontWeight: '700' }],
+        'code-snippet': ['14px', { lineHeight: '20px', fontWeight: '400' }],
+        'label-caps': ['12px', { lineHeight: '16px', letterSpacing: '0.06em', fontWeight: '700' }],
+        'display-lg': ['32px', { lineHeight: '40px', letterSpacing: '-0.02em', fontWeight: '800' }],
+        'body-bold': ['16px', { lineHeight: '26px', fontWeight: '600' }],
+        'body-sm': ['14px', { lineHeight: '20px', fontWeight: '400' }],
+        'headline-md': ['20px', { lineHeight: '28px', fontWeight: '600' }],
+        'display-lg-mobile': ['26px', { lineHeight: '34px', letterSpacing: '-0.02em', fontWeight: '800' }],
+        'body-base': ['16px', { lineHeight: '26px', fontWeight: '400' }]
+      }
+    }
+  },
+  plugins: []
+};
+

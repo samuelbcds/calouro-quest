@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;600&amp;family=JetBrains+Mono:wght@400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "secondary-fixed-dim": "#93ccff", "outline-variant": "#c2c7d1", "surface-variant": "#e0e3e5", "surface-dim": "#d8dadc", "surface-tint": "#286198", "on-surface-variant": "#42474f", "primary-fixed": "#d2e4ff", "secondary": "#006398", "surface-container-lowest": "#ffffff", "surface": "#f7f9fb", "surface-bright": "#f7f9fb", "inverse-primary": "#9fcaff", "on-error-container": "#93000a", "secondary-fixed": "#cce5ff", "surface-container-low": "#f2f4f6", "inverse-on-surface": "#eff1f3", "primary": "#00335b", "on-secondary-fixed": "#001d31", "on-tertiary": "#ffffff", "on-primary-fixed": "#001d37", "surface-container-highest": "#e0e3e5", "on-primary-container": "#88baf7", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#653e00", "on-primary": "#ffffff", "inverse-surface": "#2d3133", "on-background": "#191c1e", "secondary-container": "#5bb8fe", "background": "#f7f9fb", "surface-container-high": "#e6e8ea", "error-container": "#ffdad6", "on-secondary-container": "#00476e", "tertiary": "#482b00", "tertiary-container": "#673f00", "primary-fixed-dim": "#9fcaff", "tertiary-fixed": "#ffddb8", "tertiary-fixed-dim": "#ffb95f", "primary-container": "#004a80", "error": "#ba1a1a", "on-secondary-fixed-variant": "#004b73", "on-tertiary-container": "#fca416", "surface-container": "#eceef0", "on-primary-fixed-variant": "#00497e", "on-surface": "#191c1e", "outline": "#727781", "on-secondary": "#ffffff", "on-tertiary-fixed": "#2a1700" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "gutter-mobile": "1rem", "margin": "1.875rem", "space-xs": "0.25rem", "gutter": "1.25rem", "space-sm": "0.5rem", "margin-mobile": "1rem", "space-xl": "2rem", "space-md": "1rem", "space-lg": "1.5rem" }, fontFamily: { "headline-lg": ["Montserrat"], "headline-sm": ["Montserrat"], "headline-lg-mobile": ["Montserrat"], "code-snippet": ["JetBrains Mono"], "label-caps": ["Montserrat"], "display-lg": ["Montserrat"], "body-bold": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Montserrat"], "display-lg-mobile": ["Montserrat"], "body-base": ["Inter"] }, fontSize: { "headline-lg": ["26px", { lineHeight: "34px", letterSpacing: "-0.01em", fontWeight: "700" }], "headline-sm": ["17px", { lineHeight: "24px", fontWeight: "600" }], "headline-lg-mobile": ["22px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "700" }], "code-snippet": ["14px", { lineHeight: "20px", fontWeight: "400" }], "label-caps": ["12px", { lineHeight: "16px", letterSpacing: "0.06em", fontWeight: "700" }], "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "800" }], "body-bold": ["16px", { lineHeight: "26px", fontWeight: "600" }], "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }], "headline-md": ["20px", { lineHeight: "28px", fontWeight: "600" }], "display-lg-mobile": ["26px", { lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "800" }], "body-base": ["16px", { lineHeight: "26px", fontWeight: "400" }] } } } }</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;min-height:100vh;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-base text-body-base text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0 flex-1"><img alt="IC UFRJ Calouros Logo" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1W_IuotRg3PNakEcyNDEzPOzGWJDoptbuQxDQbztDfasGIwgZiEBckhJX-ynl1hs5BAJWqjhrJtWft-pXlwgvHW7nDb0vVHV4pV-TbOJ8jdZOEsE1hyzYzFoVmP03ego6G_r-7yODx32PYW8rcPNCtTLeXhCpZY4CGrUz1lTCN1g1UEJNT5B8vxwruIN_Ugmj2ClOS5GvNHf4gn8J6K8fJkiTJVXgbs3pN9ybAxqqlS8SekOe2IbMySBPUF"/><div class="flex flex-col min-w-0"><span class="font-label-caps text-label-caps text-secondary uppercase truncate leading-none">IC · UFRJ</span><span class="font-headline-sm text-headline-sm text-primary font-bold truncate leading-tight">Extensões &amp; Ic</span></div></div><div class="flex items-center gap-space-xs shrink-0"><div class="flex items-center gap-1 bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-1 rounded-full shadow-[0_2px_8px_rgba(245,158,11,0.2)]"><span class="material-symbols-outlined text-tertiary text-[18px]">military_tech</span><span class="font-label-caps text-label-caps text-tertiary font-bold">NV. 1</span></div><button aria-label="Configurações de som e progresso" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-primary transition-colors active:scale-95"><span class="material-symbols-outlined text-[22px]">volume_up</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full px-gutter-mobile py-space-md gap-space-lg">
+<!-- Gamification Progress Header Card -->
+<div class="bg-primary text-on-primary rounded-xl p-space-md shadow-md flex flex-col gap-space-sm relative overflow-hidden">
+<div class="flex items-center justify-between z-10">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="font-label-caps text-label-caps text-secondary-fixed tracking-wider">ECOSSISTEMA IC/UFRJ</span>
+</div>
+<div class="flex items-center gap-1 bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-label-caps text-label-caps text-tertiary" id="xp-counter">+320 XP</span>
+</div>
+</div>
+<div class="z-10">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-on-primary">
+        Projetos &amp; Entidades
+      </h1>
+<p class="font-body-sm text-body-sm text-on-primary-container mt-1">
+        Descubra onde aplicar seu código além da sala de aula, integre-se à comunidade do Fundão e pontue na sua jornada de calouro.
+      </p>
+</div>
+<!-- Progress Indicator -->
+<div class="z-10 bg-primary-container text-on-primary rounded-lg p-space-sm flex flex-col gap-1 mt-1">
+<div class="flex justify-between items-center text-on-primary">
+<span class="font-label-caps text-label-caps text-on-primary-container" id="progress-label">5 de 7 exploradas</span>
+<span class="font-label-caps text-label-caps text-secondary-fixed font-bold" id="progress-percentage">71%</span>
+</div>
+<div class="w-full h-2 bg-primary rounded-full overflow-hidden">
+<div class="h-full bg-secondary-container rounded-full transition-all duration-500 ease-out" id="progress-bar-fill" style="width: 71%;"></div>
+</div>
+</div>
+<!-- Visual Background Accent -->
+<div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-primary-container opacity-40 pointer-events-none"></div>
+</div>
+<!-- Filter / Section Chips -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 -mx-gutter-mobile px-gutter-mobile">
+<button class="bg-primary text-on-primary px-3 py-1.5 rounded-full font-label-caps text-label-caps shadow-sm shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">apps</span> Todas (7)
+    </button>
+<button class="bg-surface-container text-on-surface-variant hover:text-primary px-3 py-1.5 rounded-full font-label-caps text-label-caps shrink-0">
+      Extensão &amp; Pesquisa
+    </button>
+<button class="bg-surface-container text-on-surface-variant hover:text-primary px-3 py-1.5 rounded-full font-label-caps text-label-caps shrink-0">
+      Vivência &amp; Apoio
+    </button>
+<button class="bg-surface-container text-on-surface-variant hover:text-primary px-3 py-1.5 rounded-full font-label-caps text-label-caps shrink-0">
+      Institucional
+    </button>
+</div>
+<!-- Entities Feed -->
+<div class="flex flex-col gap-space-md">
+<!-- Card 1: Analytica UFRJ -->
+<div class="bg-surface-container-lowest text-on-surface rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="relative w-full h-32 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A diverse group of university computer science students working on laptops in a modern glass-walled lab, machine learning neural network schematics and data charts projected in the background, cool daylight ambiance with deep navy blue accents, high resolution photograph." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCp3bXT1Bt9LnAEx_eNoU6UqG-L1NKD_wLFuPnmES5_izQgel0zMkttwgdBNzwq8k71eNvDHsDy_J4GAFZ7DyN4iarSFzOJougeI5gP539Qti7kJS1plz2dNMsfkaWb1Mmpb87MCQ3KAJ9Sa2nHJIlBDUpVLpQk3HYQRlz92VpU-WC4OfZTbkUIkKbQENdqyiEzJF2aAjPHCwndB11oSXDOZpNC82L_UNDgcPwyHIZG7Nn4ehMcP8rIQ"/>
+<div class="absolute top-3 left-3 bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-caps text-label-caps shadow-sm">
+          DATA SCIENCE &amp; IA
+        </div>
+</div>
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Analytica UFRJ</h2>
+<span class="font-label-caps text-label-caps text-outline">Núcleo de Inteligência Artificial</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[24px]">analytics</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Foco em Data Science, Machine Learning, Visão Computacional e competições globais no Kaggle. Projetos aplicados para resolver problemas reais com dados.
+        </p>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-md font-label-caps text-label-caps">Processo Seletivo Anual</span>
+<span class="bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-md font-label-caps text-label-caps">Hackathons</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-space-xs gap-space-sm">
+<a class="font-label-caps text-label-caps text-secondary flex items-center gap-0.5 hover:underline" href="#">
+<span class="material-symbols-outlined text-[16px]">link</span> @analytica.ufrj
+          </a>
+<button class="bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps px-3 py-2 rounded-lg flex items-center gap-1.5 transition-colors" data-explored="true" onclick="toggleExplored(this, 60)">
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+<span>Explorado (+60 XP)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: GRIS -->
+<div class="bg-surface-container-lowest text-on-surface rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="relative w-full h-32 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Cybersecurity research group at university workstations, multiple dark mode terminal screens showing ethical hacking CTF flags, blue and slate neon reflections, high-tech academic environment, cinematic photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQUAhMI4aOgtLcXcu1wrBF2m4NDRe--vgishg9ojWHxYwv53N--Fbx41ngMtrK0ZO5XQhL9GIExnn_ePjOmF6cdEikO6AT4lWzOmoYH-2TI_-_5FcZrmHk9X8eRYBOqkAi1VF0BndeSWIWoPmAT0JlvDWzWF1hltPEfZriI8AvQEgQyRwBdupb0vjkhQLngDRGOmAW847ML0xJb1nv5ks7G9osjfsAjnEC5mC0NexgWh3QeyNCfqnNOA"/>
+<div class="absolute top-3 left-3 bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded-full font-label-caps text-label-caps shadow-sm">
+          SEGURANÇA DA INFORMAÇÃO
+        </div>
+</div>
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">GRIS UFRJ</h2>
+<span class="font-label-caps text-label-caps text-outline">Resposta a Incidentes &amp; Segurança</span>
+</div>
+<span class="material-symbols-outlined text-primary text-[24px]">security</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Pioneiros em Cibersegurança no CCMN. Treinamento prático em Hacking Ético, torneios de Capture The Flag (CTF), criptografia e auditoria de sistemas.
+        </p>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-md font-label-caps text-label-caps">CTF Time Top Rank</span>
+<span class="bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-md font-label-caps text-label-caps">Workshops Abertos</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-space-xs gap-space-sm">
+<a class="font-label-caps text-label-caps text-secondary flex items-center gap-0.5 hover:underline" href="#">
+<span class="material-symbols-outlined text-[16px]">link</span> gris.ufrj.br
+          </a>
+<button class="bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps px-3 py-2 rounded-lg flex items-center gap-1.5 transition-colors" data-explored="true" onclick="toggleExplored(this, 60)">
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+<span>Explorado (+60 XP)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Minervas Digitais -->
+<div class="bg-surface-container-lowest text-on-surface rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="relative w-full h-32 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Women in tech workshop room in federal university, female undergraduate developers coding on laptops together and smiling, warm natural daylight entering large campus windows, collaborative and encouraging environment, professional photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1DNqcFw-DOOOhcyxOL6hDXiJwVCNlCbnntiBL1tvySSHW5H0YaD2wHhFKyIu-FQbyU7x1nxH8JzU6AyddEw9gfm2BCZU_NBkgOHi1bOkE94W1Nhjuv6Fz-E4QcPZCHmTnhrgDtuarO8sJM3XytDWBkggy6SKCtPIoOlJdsX_EqM7kFeAu87FnaubMar4FKpJZoApOI-vSxHehwB4vYsSzp_ymy8oTbfKSXSIp1voevmAZKLPctuu-iQ"/>
+<div class="absolute top-3 left-3 bg-secondary-fixed text-on-secondary-fixed px-2 py-0.5 rounded-full font-label-caps text-label-caps shadow-sm">
+          DIVERSIDADE &amp; INCLUSÃO
+        </div>
+</div>
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Minervas Digitais</h2>
+<span class="font-label-caps text-label-caps text-outline">Capítulo Mulheres na Computação</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[24px]">diversity_1</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Iniciativa dedicada à atração, retenção e protagonismo feminino na Computação através de mentorias acadêmicas, oficinas de programação e debates acolhedores.
+        </p>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-md font-label-caps text-label-caps">Mentorias Calouras</span>
+<span class="bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-md font-label-caps text-label-caps">Cursos Gratuitos</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-space-xs gap-space-sm">
+<a class="font-label-caps text-label-caps text-secondary flex items-center gap-0.5 hover:underline" href="#">
+<span class="material-symbols-outlined text-[16px]">link</span> @minervasdigitais
+          </a>
+<button class="bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps px-3 py-2 rounded-lg flex items-center gap-1.5 transition-colors" data-explored="true" onclick="toggleExplored(this, 60)">
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+<span>Explorado (+60 XP)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4: Museu Digital Suvaco de Cristo -->
+<div class="bg-surface-container-lowest text-on-surface rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="relative w-full h-32 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="High quality archival scanning equipment with vintage Rio de Janeiro cultural photographs and carnival memorabilia, adjacent to computer monitors showcasing web archive software and digital humanities database, bright warm carioca daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNFYTlZorq87Lmwv1sXr7TYAohC_b8wr-NlKKRdM0j9FRPnybV7ekb82VUQzv6bpm6W2YESppyLGJPr0L24ooiqpAUlC7m9y5S2iH7Qfh29aqajENj_jYPVrJSOtslREzkFIv8jBqu6fxqBl1tydFvR-ET-br3vzS6j-B06KH3sQeYL9e7UqIyES4XksqpQHsN1EVten6m8mh-OhWBAz8lW_EE0V85L6egY5jla0E0LHSWfBkiRgDekA"/>
+<div class="absolute top-3 left-3 bg-tertiary-fixed text-on-tertiary-fixed px-2 py-0.5 rounded-full font-label-caps text-label-caps shadow-sm">
+          MEMÓRIA CULTURAL &amp; ACERVO
+        </div>
+</div>
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Museu Digital Suvaco de Cristo</h2>
+<span class="font-label-caps text-label-caps text-outline">Humanidades Digitais &amp; Preservação</span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[24px]">museum</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Ponte direta entre tecnologia e patrimônio carioca. Digitalização, metadados e acervo web interativo do bloco carnavalesco mais histórico do Jardim Botânico.
+        </p>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-md font-label-caps text-label-caps">Arquivologia Digital</span>
+<span class="bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-md font-label-caps text-label-caps">Desenvolvimento Web</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-space-xs gap-space-sm">
+<a class="font-label-caps text-label-caps text-secondary flex items-center gap-0.5 hover:underline" href="#">
+<span class="material-symbols-outlined text-[16px]">link</span> acervo.suvaco.ic
+          </a>
+<button class="bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps px-3 py-2 rounded-lg flex items-center gap-1.5 transition-colors" data-explored="true" onclick="toggleExplored(this, 60)">
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+<span>Explorado (+60 XP)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 5: EJCM -->
+<div class="bg-surface-container-lowest text-on-surface rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="relative w-full h-32 overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Student consulting agency office inside university campus, agile scrum board with sticky notes, collegiate students collaborating around laptops designing web and mobile applications, professional yet energetic atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7-WnI0nSLvZYohE1CVbG1F6zhyQS3iPStqVDAkfi3b_rrupkDppzCRFi3gEgyrYnSAkEphL94e8lRRcSQQIDIZmLoDN5VxEzlZDxVahRps0eu0wKdEOgcLP-OeZD4NSdsbXCz4at4u91smWANLMe-hyuHjcgS3gNzd5nhWKWJjSSgrzLb8k4ET5Xcp7ZSyM3KNYOE3rt8JL4gBeNhYJdzlBCYnGw-xi5d8qEnTnDFSff4BCZFczBdRg"/>
+<div class="absolute top-3 left-3 bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-caps text-label-caps shadow-sm">
+          EMPREENDEDORISMO REAL &amp; DEV
+        </div>
+</div>
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">EJCM</h2>
+<span class="font-label-caps text-label-caps text-outline">Empresa Júnior de Consultoria e Modelagem</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[24px]">rocket_launch</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Vivência de mercado real no campus. Desenvolvimento Web Full-stack, aplicativos mobile, consultoria de software e gestão empresarial com clientes de verdade.
+        </p>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-md font-label-caps text-label-caps">Portfólio Profissional</span>
+<span class="bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-md font-label-caps text-label-caps">Processo Seletivo Semestral</span>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-space-xs gap-space-sm">
+<a class="font-label-caps text-label-caps text-secondary flex items-center gap-0.5 hover:underline" href="#">
+<span class="material-symbols-outlined text-[16px]">link</span> ejcm.com.br
+          </a>
+<button class="bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps px-3 py-2 rounded-lg flex items-center gap-1.5 transition-colors" data-explored="true" onclick="toggleExplored(this, 80)">
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+<span>Explorado (+80 XP)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 6: CAINFO -->
+<div class="bg-surface-container-lowest text-on-surface rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-1.5 mb-1">
+<span class="bg-secondary-fixed text-on-secondary-fixed px-2 py-0.5 rounded-full font-label-caps text-label-caps">REPRESENTAÇÃO ESTUDANTIL</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">CAINFO</h2>
+<span class="font-label-caps text-label-caps text-outline">Centro Acadêmico de Informática · UFRJ</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">forum</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          A voz dos alunos de BCC no departamento. Responsável pela recepção de calouros, Semana da Computação, armários do CCMN e canal direto de dúvidas acadêmicas.
+        </p>
+<!-- Social Action Buttons -->
+<div class="grid grid-cols-2 gap-space-xs pt-1">
+<a class="bg-surface-container text-primary font-body-sm text-body-sm py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 hover:bg-surface-container-high active:scale-95 transition-all" href="https://t.me" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[18px] text-secondary">send</span>
+<span class="font-bold">Telegram Geral</span>
+</a>
+<a class="bg-surface-container text-primary font-body-sm text-body-sm py-2 px-3 rounded-lg flex items-center justify-center gap-1.5 hover:bg-surface-container-high active:scale-95 transition-all" href="https://instagram.com" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[18px] text-secondary">photo_camera</span>
+<span class="font-bold">@cainfo.ufrj</span>
+</a>
+</div>
+<div class="flex items-center justify-between pt-space-xs border-t-0 mt-space-xs">
+<span class="font-body-sm text-body-sm text-outline-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">location_on</span> Sala no Bloco C / CCMN
+          </span>
+<button class="bg-primary-container text-on-primary font-label-caps text-label-caps px-3 py-2 rounded-lg flex items-center gap-1.5 shadow-sm active:scale-95 transition-all" data-explored="false" onclick="toggleExplored(this, 50)">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Marcar (+50 XP)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 7: Canais Acadêmicos Oficiais -->
+<div class="bg-surface-container-lowest text-on-surface rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="p-space-md flex flex-col gap-space-sm">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-1.5 mb-1">
+<span class="bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-full font-label-caps text-label-caps">SISTEMAS &amp; DIRETÓRIO</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-primary font-bold">Canais Oficiais &amp; Links Úteis</h2>
+<span class="font-label-caps text-label-caps text-outline">Portais essenciais para sua sobrevivência</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">hub</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Mantenha esses endereços salvos nos favoritos. São as vias para matrículas, notas, editais de monitoria e trocas informais.
+        </p>
+<!-- Quick Access List -->
+<div class="flex flex-col gap-2 pt-1">
+<a class="bg-surface-container-low p-2.5 rounded-lg flex items-center justify-between hover:bg-surface-container transition-colors" href="#">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">school</span>
+<div class="flex flex-col">
+<span class="font-body-bold text-body-bold text-primary leading-tight">SIGA UFRJ</span>
+<span class="font-label-caps text-label-caps text-outline">siga.ufrj.br · Histórico &amp; Inscrição</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">arrow_forward</span>
+</a>
+<a class="bg-surface-container-low p-2.5 rounded-lg flex items-center justify-between hover:bg-surface-container transition-colors" href="#">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">mail</span>
+<div class="flex flex-col">
+<span class="font-body-bold text-body-bold text-primary leading-tight">Webmail Institucional</span>
+<span class="font-label-caps text-label-caps text-outline">webmail.ic.ufrj.br (@ic.ufrj.br)</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">arrow_forward</span>
+</a>
+<a class="bg-surface-container-low p-2.5 rounded-lg flex items-center justify-between hover:bg-surface-container transition-colors" href="#">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">language</span>
+<div class="flex flex-col">
+<span class="font-body-bold text-body-bold text-primary leading-tight">Portal do IC</span>
+<span class="font-label-caps text-label-caps text-outline">ic.ufrj.br · Ementas &amp; Professores</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">arrow_forward</span>
+</a>
+<a class="bg-surface-container-low p-2.5 rounded-lg flex items-center justify-between hover:bg-surface-container transition-colors" href="#">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container text-[20px]">radar</span>
+<div class="flex flex-col">
+<span class="font-body-bold text-body-bold text-primary leading-tight">Spotted UFRJ / Fundão</span>
+<span class="font-label-caps text-label-caps text-outline">Comunidade informal &amp; achados e perdidos</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[18px]">open_in_new</span>
+</a>
+</div>
+<div class="flex items-center justify-between pt-space-xs mt-space-xs">
+<span class="font-label-caps text-label-caps text-outline">Coordenação: Bloco E-2003</span>
+<button class="bg-primary-container text-on-primary font-label-caps text-label-caps px-3 py-2 rounded-lg flex items-center gap-1.5 shadow-sm active:scale-95 transition-all" data-explored="false" onclick="toggleExplored(this, 50)">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Marcar (+50 XP)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Calouro Community Tip Box -->
+<div class="bg-secondary-fixed text-on-secondary-fixed rounded-xl p-space-md flex gap-space-sm items-center shadow-sm">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">lightbulb</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-bold text-body-bold text-on-secondary-fixed leading-tight">Dica de Veterano</span>
+<span class="font-body-sm text-body-sm text-on-secondary-fixed-variant mt-0.5">
+        Projetos de extensão contam como Horas Complementares obrigatórias para sua formatura em Ciência da Computação. Participe!
+      </span>
+</div>
+</div>
+</div>
+<!-- Inline Interactive Script for Gamification XP and Exploration -->
+<script>
+  let totalXP = 320;
+  let exploredCount = 5;
+  const totalEntities = 7;
+
+  function toggleExplored(btn, xpAmount) {
+    const isExplored = btn.getAttribute('data-explored') === 'true';
+    const xpCounterEl = document.getElementById('xp-counter');
+    const progressLabelEl = document.getElementById('progress-label');
+    const progressPctEl = document.getElementById('progress-percentage');
+    const progressBarEl = document.getElementById('progress-bar-fill');
+
+    if (!isExplored) {
+      // Mark as explored
+      btn.setAttribute('data-explored', 'true');
+      btn.className = "bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps px-3 py-2 rounded-lg flex items-center gap-1.5 transition-colors";
+      btn.innerHTML = `<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span><span>Explorado (+${xpAmount} XP)</span>`;
+      
+      totalXP += xpAmount;
+      exploredCount = Math.min(totalEntities, exploredCount + 1);
+
+      // Trigger micro celebration feedback
+      showConfettiFeedback(btn);
+    } else {
+      // Revert to uncompleted
+      btn.setAttribute('data-explored', 'false');
+      btn.className = "bg-primary-container text-on-primary font-label-caps text-label-caps px-3 py-2 rounded-lg flex items-center gap-1.5 shadow-sm active:scale-95 transition-all";
+      btn.innerHTML = `<span class="material-symbols-outlined text-[18px]">add_circle</span><span>Marcar (+${xpAmount} XP)</span>`;
+      
+      totalXP -= xpAmount;
+      exploredCount = Math.max(0, exploredCount - 1);
+    }
+
+    // Update UI elements
+    xpCounterEl.innerText = `+${totalXP} XP`;
+    const pct = Math.round((exploredCount / totalEntities) * 100);
+    progressLabelEl.innerText = `${exploredCount} de ${totalEntities} exploradas`;
+    progressPctEl.innerText = `${pct}%`;
+    progressBarEl.style.width = `${pct}%`;
+  }
+
+  function showConfettiFeedback(originElement) {
+    originElement.classList.add('scale-105');
+    setTimeout(() => {
+      originElement.classList.remove('scale-105');
+    }, 200);
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,43,73,0.06)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-20 px-space-xs"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-all active:scale-95" data-path="missoes" href="#"><span class="material-symbols-outlined text-[24px]">assignment_turned_in</span><span class="font-label-caps text-label-caps">Missões</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-all active:scale-95" data-path="conquistas" href="#"><span class="material-symbols-outlined text-[24px]">trophy</span><span class="font-label-caps text-label-caps">Conquistas</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-all active:scale-95" data-path="mapa-do-fundao" href="#"><span class="material-symbols-outlined text-[24px]">explore</span><span class="font-label-caps text-label-caps">Mapa</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 text-on-surface-variant hover:text-primary transition-all active:scale-95" data-path="extensoes-ic" href="#"><span class="material-symbols-outlined text-[24px]">groups</span><span class="font-label-caps text-label-caps">Extensões</span></a></div></nav></body></html>

@@ -1,0 +1,196 @@
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+  body {
+    overscroll-behavior-y: none;
+    -webkit-tap-highlight-color: transparent;
+    background-color: #f7f9fb;
+    color: #191c1e;
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@layer components {
+  /* ==========================================================================
+     Layout Containers & Page Structures
+     ========================================================================== */
+  .page-container {
+    @apply flex flex-col w-full px-margin-mobile py-space-sm space-y-space-md max-w-[800px] mx-auto select-none;
+  }
+
+  /* ==========================================================================
+     Filter Bars & Buttons
+     ========================================================================== */
+  .filter-bar {
+    @apply flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar;
+  }
+
+  .badge-filter-btn {
+    @apply px-3.5 py-1.5 rounded-full font-label-caps text-label-caps active:scale-95 transition-all cursor-pointer bg-surface-container text-on-surface-variant hover:text-primary shrink-0;
+  }
+  .badge-filter-btn.active {
+    @apply bg-primary text-on-primary shadow-sm font-bold;
+  }
+
+  .filter-chips-scroll {
+    @apply flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1 -mx-margin-mobile px-margin-mobile;
+  }
+
+  .filter-chip {
+    @apply shrink-0 px-3.5 py-1.5 rounded-full font-label-caps text-label-caps transition-all flex items-center gap-1.5 cursor-pointer active:scale-95 bg-surface-container text-on-surface-variant hover:bg-surface-container-high;
+  }
+  .filter-chip.active {
+    @apply bg-primary text-on-primary shadow-sm font-bold;
+  }
+
+  /* ==========================================================================
+     Feed Lists & Grids
+     ========================================================================== */
+  .badges-grid {
+    @apply grid grid-cols-1 gap-3;
+  }
+
+  .missions-list {
+    @apply space-y-space-xs;
+  }
+
+  .poi-feed,
+  .entities-feed {
+    @apply flex flex-col gap-space-md;
+  }
+
+  /* ==========================================================================
+     Cards & Component Containers
+     ========================================================================== */
+  .veteran-tip-card {
+    @apply bg-surface-container-low rounded-xl p-space-md flex items-center gap-space-sm shadow-sm border border-surface-container-high/60;
+  }
+
+  .veteran-tip-banner {
+    @apply bg-secondary-fixed text-on-secondary-fixed rounded-xl p-space-md flex gap-space-sm items-center shadow-sm;
+  }
+
+  .search-bar-wrapper {
+    @apply relative w-full;
+  }
+
+  .search-input {
+    @apply w-full h-11 pl-11 pr-10 bg-surface-container rounded-xl text-on-surface font-body-base text-body-sm placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest shadow-sm border border-transparent focus:border-secondary transition-all;
+  }
+
+  .search-clear-btn {
+    @apply absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary p-1 cursor-pointer;
+  }
+
+  .gamification-hero-card {
+    @apply bg-primary text-on-primary rounded-xl p-space-md shadow-md relative overflow-hidden flex flex-col space-y-space-sm;
+  }
+
+  .trophy-overview-card {
+    @apply relative overflow-hidden rounded-xl bg-gradient-to-br from-primary to-primary-container p-space-md text-on-primary shadow-xl flex flex-col space-y-space-sm;
+  }
+
+  .claim-card {
+    @apply rounded-xl bg-surface-container p-space-md shadow-sm border border-surface-container-high;
+  }
+
+  .extension-hero-card {
+    @apply bg-primary text-on-primary rounded-xl p-space-md shadow-md flex flex-col gap-space-sm relative overflow-hidden;
+  }
+
+  .extension-card {
+    @apply bg-surface-container-lowest text-on-surface rounded-xl shadow-sm border border-surface-container-high/60 overflow-hidden flex flex-col;
+  }
+
+  .location-card {
+    @apply bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-300 hover:shadow-md flex flex-col gap-3 border border-transparent;
+  }
+  .location-card.highlighted {
+    @apply border-secondary ring-2 ring-secondary/30 scale-[1.01];
+  }
+
+  .radar-canvas-card {
+    @apply relative w-full bg-primary rounded-xl overflow-hidden shadow-md text-on-primary;
+  }
+
+  .bus-schedule-card,
+  .bandejao-guide-card {
+    @apply bg-surface-container-lowest rounded-xl p-space-md shadow-sm border border-surface-container-high/60 flex flex-col gap-3;
+  }
+
+  .mission-card {
+    @apply relative bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all duration-200 hover:shadow-md flex flex-col gap-space-xs;
+  }
+  .mission-card.completed {
+    @apply bg-surface-container-low/40;
+  }
+
+  .badge-card {
+    @apply relative flex items-start gap-space-sm p-3.5 rounded-xl transition-all duration-200;
+  }
+  .badge-card.unlocked {
+    @apply bg-surface-container-lowest shadow-md hover:shadow-lg;
+  }
+  .badge-card.locked {
+    @apply bg-surface-container-low opacity-80 hover:opacity-100;
+  }
+}
+
+/* Custom Leaflet Styling */
+.custom-campus-popup .leaflet-popup-content-wrapper {
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  padding: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.custom-campus-popup .leaflet-popup-content {
+  margin: 0.75rem;
+  line-height: 1.4;
+}
+
+.custom-campus-popup .leaflet-popup-tip {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.leaflet-container {
+  font-family: inherit;
+  z-index: 10;
+}
