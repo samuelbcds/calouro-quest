@@ -11,10 +11,10 @@ export const RANK_TIERS: RankTier[] = [
   },
   {
     level: 2,
-    name: 'Bicho Curioso',
+    name: 'Calouro Curioso',
     minXp: 401,
     maxXp: 1000,
-    description: 'Já pegou o Circular sem se perder e ativou a credencial @ic.ufrj.br.',
+    description: 'Já pegou o Circular sem se perder e ativou o e-mail institucional @ic.ufrj.br.',
     icon: 'military_tech',
   },
   {
@@ -30,15 +30,15 @@ export const RANK_TIERS: RankTier[] = [
     name: 'Veterano Jr.',
     minXp: 1801,
     maxXp: 2800,
-    description: 'Desceu ao lendário labirinto do subsolo do CCS e retornou ileso.',
+    description: 'Conhece bem os caminhos do campus, do CCMN ao subsolo do CCS.',
     icon: 'explore',
   },
   {
     level: 5,
-    name: 'Mestre do Fundão.',
+    name: 'Mestre do Fundão',
     minXp: 2801,
     maxXp: 4000,
-    description: 'Frequentador da sede do CAINFO, almoça no RU no horário ninja e guia novos calouros.',
+    description: 'Frequentador do IC e CAINFO, já conhece os melhores horários do RU e ajuda os calouros que estão chegando.',
     icon: 'workspace_premium',
   }
 ];
@@ -46,8 +46,8 @@ export const RANK_TIERS: RankTier[] = [
 export const ACHIEVEMENTS: Achievement[] = [
   {
     id: 'bandejao-survivor',
-    title: 'Bandejão Survivor',
-    description: 'Almoçou no bandejão e encarou a fila da hora do rush!',
+    title: 'Sobrevivente do Bandejão',
+    description: 'Almoçou no bandejão e encarou a fila dos horários de pico!',
     icon: 'restaurant',
     xp: 50,
     requiredMissionIds: [1],
@@ -97,7 +97,7 @@ export const ACHIEVEMENTS: Achievement[] = [
   },
   {
     id: 'laboratorista',
-    title: 'Hacker do Bloco E',
+    title: 'Habitué do Bloco E',
     description: 'Conheceu os laboratórios de programação 1 e 3 do IC.',
     icon: 'laptop_mac',
     xp: 80,
@@ -138,7 +138,7 @@ export const ACHIEVEMENTS: Achievement[] = [
   {
     id: 'cafe-decania',
     title: 'Café com a Decania',
-    description: 'Descobriu a mítica copa do NCE e a decania do CCMN.',
+    description: 'Conheceu a copa do NCE e a decania do CCMN.',
     icon: 'coffee',
     xp: 60,
     requiredMissionIds: [14],
@@ -148,7 +148,7 @@ export const ACHIEVEMENTS: Achievement[] = [
   {
     id: 'espeleologo-ccs',
     title: 'Espeleólogo do CCS',
-    description: 'Desceu até o lendário subsolo do CCS e conseguiu achar a saída.',
+    description: 'Desceu até o subsolo do CCS e conheceu o complexo.',
     icon: 'explore',
     xp: 100,
     requiredMissionIds: [20],
@@ -157,8 +157,8 @@ export const ACHIEVEMENTS: Achievement[] = [
   },
   {
     id: 'pizzada-veteran',
-    title: 'Pizzada Veteran',
-    description: 'Participou da confraternização oficial da calourada de CC.',
+    title: 'Pizzada dos Calouros',
+    description: 'Participou da tradicional confraternização da calourada de Computação.',
     icon: 'local_pizza',
     xp: 100,
     requiredMissionIds: [24],

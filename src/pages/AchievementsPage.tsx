@@ -3,7 +3,6 @@ import { ACHIEVEMENTS } from '../data/achievements';
 import { useGamification } from '../context/GamificationContext';
 import { TrophyOverview } from '../components/achievements/TrophyOverview';
 import { AchievementCard } from '../components/achievements/AchievementCard';
-import { RewardClaimCard } from '../components/achievements/RewardClaimCard';
 
 export const AchievementsPage: React.FC = () => {
   const [filter, setFilter] = useState<'all' | 'unlocked' | 'locked'>('all');
@@ -55,9 +54,6 @@ export const AchievementsPage: React.FC = () => {
           <AchievementCard key={achievement.id} achievement={achievement} />
         ))}
       </div>
-
-      {/* Physical Reward / Resgate Card */}
-      <RewardClaimCard />
     </div>
   );
 };

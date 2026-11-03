@@ -41,7 +41,7 @@ export interface CampusLocation {
   building: string;
   description: string;
   howToGetThere: string;
-  ninjaTip?: string;
+  veteranTip?: string;
   icon: string;
   badge: string;
   lat: number;

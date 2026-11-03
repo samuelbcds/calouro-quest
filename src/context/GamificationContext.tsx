@@ -179,7 +179,7 @@ export const GamificationProvider: React.FC<{ children: ReactNode }> = ({ childr
     } else {
       setCompletedMissions((prev) => [...prev, id]);
       if (mission) {
-        showToast(`+${mission.xp} XP! Mandou bem, bixo!`);
+        showToast(`+${mission.xp} XP! Mandou bem, calouro!`);
       }
       if (soundEnabled) {
         soundEffects.playMissionComplete();

@@ -42,7 +42,7 @@ export const BandejaoGuideCard: React.FC = () => {
       <div className="bg-primary/5 p-3 rounded-lg border border-primary/10 flex flex-col gap-1">
         <span className="font-label-caps text-[12px] text-primary font-bold flex items-center gap-1">
           <span className="material-symbols-outlined text-[16px] text-tertiary">stars</span>
-          Estratégia Ninja dos Veteranos:
+          Dica de Veterano:
         </span>
         <p className="font-body-sm text-body-sm text-on-surface-variant">
           Saia da aula às 11h40 ou vá almoçar às 13h30. Você pegará fila praticamente zero e almoçará com tranquilidade com a galera!

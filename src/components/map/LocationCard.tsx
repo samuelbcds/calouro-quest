@@ -143,11 +143,11 @@ export const LocationCard: React.FC<LocationCardProps> = ({
         </p>
       </div>
 
-      {location.ninjaTip && (
+      {location.veteranTip && (
         <div className="flex items-center gap-2 text-tertiary bg-tertiary-fixed/30 px-3 py-1.5 rounded-lg font-body-sm text-[13px]">
           <span className="material-symbols-outlined text-[18px] shrink-0">tips_and_updates</span>
           <span>
-            <strong>Dica Ninja:</strong> {location.ninjaTip}
+            <strong>Dica de Veterano:</strong> {location.veteranTip}
           </span>
         </div>
       )}

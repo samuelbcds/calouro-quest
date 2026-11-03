@@ -4,7 +4,7 @@ export const INITIAL_MISSIONS: Mission[] = [
   {
     id: 1,
     title: 'Almoçar no bandejão',
-    description: 'Primeiro contato com a fila mística do CT/Central. Leve a carteirinha ou app!',
+    description: 'Primeiro contato com a tradicional super fila do bandejão do CT ou Central!',
     category: 'fundao',
     xp: 50,
     tag: 'Crucial',
@@ -31,10 +31,10 @@ export const INITIAL_MISSIONS: Mission[] = [
   {
     id: 4,
     title: 'Adquirir o seu email IC.UFRJ.BR',
-    description: 'Identidade de hacker federal: seu passaporte de acesso aos laboratórios e servidores.',
+    description: 'Seu e-mail institucional @ic.ufrj.br: passaporte de acesso aos laboratórios e servidores do instituto.',
     category: 'ic',
     xp: 80,
-    tag: 'Sobrevivência',
+    tag: 'Acesso',
     codeSnippet: 'whoami: calouro@ic.ufrj.br',
   },
   {
@@ -135,7 +135,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Analytica (IA/Data), GRIS (Segurança), Minervas Digitais & Museu Suvaco de Cristo.',
     category: 'extensoes',
     xp: 120,
-    tag: 'Impulso',
+    tag: 'Oportunidade',
   },
   {
     id: 17,
@@ -166,10 +166,10 @@ export const INITIAL_MISSIONS: Mission[] = [
   {
     id: 20,
     title: 'Conhecer o subsolo do CCS',
-    description: 'O autêntico labirinto do Fundão. Entre acompanhado para não virar lenda urbana!',
+    description: 'Complexo subterrâneo labírintico do Centro de Ciências da Saúde. Vale a pena conhecer com colegas para se orientar bem pelos blocos.',
     category: 'fundao',
     xp: 100,
-    tag: 'Desafio',
+    tag: 'Exploração',
     location: 'CCS Subsolo',
   },
   {
@@ -196,7 +196,7 @@ export const INITIAL_MISSIONS: Mission[] = [
     description: 'Palestras de recepção, gincana de calouros e apresentação dos laboratórios.',
     category: 'social',
     xp: 150,
-    tag: 'Épica',
+    tag: 'Integração',
   },
   {
     id: 24,
